@@ -5,10 +5,11 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
+    context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './src/index.js',
-        analytics: './src/analytics.js'
+        main: './index.js',
+        analytics: './analytics.js'
     }, //входная точка приложения, откуда вебпаку начать
     output: {
         filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
@@ -16,7 +17,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: 'src/index.html'
+            template: 'index.html'
         }),
         new CleanWebpackPlugin()
     ]
