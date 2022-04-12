@@ -18,4 +18,4 @@ function createAnalytics()
         }
     }
 }
-window.analyticsss = createAnalytics()
+window.analytics = createAnalytics()
