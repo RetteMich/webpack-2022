@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/analytics.js":
-/*!**************************!*\
-  !*** ./src/analytics.js ***!
-  \**************************/
+/***/ "./analytics.js":
+/*!**********************!*\
+  !*** ./analytics.js ***!
+  \**********************/
 /***/ (() => {
 
-eval("function createAnalytics()\n{\n    let count = 0\n    let isDestroyed = false\n    const listener = () => count++\n    document.addEventListener('click', listener)\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener)\n            isDestroyed = true\n        }, \n        getClicks() {\n            if (isDestroyed) {\n                return 'Analytics is destroyed'\n            }\n            return count\n        }\n    }\n}\nwindow.analyticsss = createAnalytics()\n\n//# sourceURL=webpack://webpack-2022/./src/analytics.js?");
+eval("function createAnalytics()\n{\n    let count = 0\n    let isDestroyed = false\n    const listener = () => count++\n    document.addEventListener('click', listener)\n\n    return {\n        destroy() {\n            document.removeEventListener('click', listener)\n            isDestroyed = true\n        }, \n        getClicks() {\n            if (isDestroyed) {\n                return 'Analytics is destroyed'\n            }\n            return count\n        }\n    }\n}\nwindow.analytics = createAnalytics()\n\n//# sourceURL=webpack:///./analytics.js?");
 
 /***/ })
 
@@ -26,7 +26,7 @@ eval("function createAnalytics()\n{\n    let count = 0\n    let isDestroyed = fa
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/analytics.js"]();
+/******/ 	__webpack_modules__["./analytics.js"]();
 /******/ 	
 /******/ })()
 ;
