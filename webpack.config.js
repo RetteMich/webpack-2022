@@ -20,7 +20,22 @@ module.exports = {
             template: 'index.html'
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    //Выше написана минимальная конфигурация для webpack
+    module: {
+        rules: [
+            {
+                test: /\.css$/, //как только вебпак встречает .css ему надо использовать особый тип лоадеров
+                use: ['style-loader', 'css-loader'] //сначала вебпак все пропускает через css-loader, затем через style-loader
+                //css-loader позволяет вебпаку понимать импорты и импортировать в js стили
+                //style-loader добавляет наши стили в секцию head html
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                type: 'asset/resource'
+            }
+        ]
+            
+    }
 
 }
-//Выше написана минимальная конфигурация для webpack
