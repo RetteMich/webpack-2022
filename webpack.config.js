@@ -1,7 +1,16 @@
 const path = require('path')
 //подключаем плагины
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
+
+
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+console.log('IS DEV:', isDev)
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -15,20 +24,49 @@ module.exports = {
         filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    devServer: {
+        port: 4200,
+        liveReload:true
+    },
     plugins: [
         new HTMLWebpackPlugin({
-            template: 'index.html'
+            template: 'index.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/favicon.ico'),
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        })
     ],
     //Выше написана минимальная конфигурация для webpack
     module: {
         rules: [
             {
-                test: /\.css$/, //как только вебпак встречает .css ему надо использовать особый тип лоадеров
-                use: ['style-loader', 'css-loader'] //сначала вебпак все пропускает через css-loader, затем через style-loader
-                //css-loader позволяет вебпаку понимать импорты и импортировать в js стили
-                //style-loader добавляет наши стили в секцию head html
+                test: /\.css$/i, //как только вебпак встречает .css ему надо использовать особый тип лоадеров
+                use: [
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                            
+                        },
+                    },
+                    'css-loader'
+                ]
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
