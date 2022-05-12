@@ -4,6 +4,7 @@ import './styles/styles.css' //импорт стилей
 import json from './assets/json.json'//
 import WebpackLogo from './assets/webpack-logo.png'
 import './styles/scss.scss'
+import 'babel.js'
 const post = new Post('Webpack Post Title', WebpackLogo)
 
 $('pre').addClass('code').html(post.toString())
