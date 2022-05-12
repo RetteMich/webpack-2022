@@ -3,6 +3,7 @@ import Post from "./Post"
 import './styles/styles.css' //импорт стилей
 import json from './assets/json.json'//
 import WebpackLogo from './assets/webpack-logo.png'
+import './styles/scss.scss'
 const post = new Post('Webpack Post Title', WebpackLogo)
 
 $('pre').addClass('code').html(post.toString())
