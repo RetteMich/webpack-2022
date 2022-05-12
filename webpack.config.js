@@ -12,6 +12,22 @@ const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log('IS DEV:', isDev)
 
+const optimization = () => {
+    const config = {
+        splitChunks: {
+        chunks: 'all'
+        }
+    }
+    if (isProd)
+    {
+        config.minimizer = [
+            new TerserWebpackPlugin(),
+            new CssMinimizerWebpackPlugin()
+        ]
+    }
+    return config
+}
+
 /** @type {import('webpack').Configuration} */
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -24,11 +40,7 @@ module.exports = {
         filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
-    },
+    optimization: optimization(),
     devServer: {
         port: 4200,
         liveReload:true
