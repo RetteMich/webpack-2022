@@ -33,7 +33,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './index.js',
+        main: ['@babel/polyfill', './index.js'],
         analytics: './analytics.js'
     }, //входная точка приложения, откуда вебпаку начать
     output: {
@@ -96,7 +96,7 @@ module.exports = {
                     ],
             },
             {
-            test: /\.m?js$/,
+            test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
