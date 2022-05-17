@@ -32,19 +32,14 @@ const optimization = () => {
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: './app.js', //входная точка приложения, откуда вебпаку начать
+    entry: './index.js', //входная точка приложения, откуда вебпаку начать
     output: {
         filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
     },
     optimization: optimization(),
-    devServer: {
-        port: 4200,
-        liveReload:true
-    },
     plugins: [
         new HTMLWebpackPlugin({
-            filename: 'index.html',
             template: 'index.pug',
             minify: {
                 collapseWhitespace: isProd
@@ -63,20 +58,11 @@ module.exports = {
             filename: '[name].[contenthash].css'
         })
     ],
-    //Выше написана минимальная конфигурация для webpack
     module: {
         rules: [
             {
-                test: /\.css$/i, //как только вебпак встречает .css ему надо использовать особый тип лоадеров
-                use: [
-                {
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                            
-                        },
-                    },
-                    'css-loader'
-                ]
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
@@ -85,21 +71,18 @@ module.exports = {
             {
                test: /\.s[ac]ss$/i,
                 use: [
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
+                   'style-loader',
                     'css-loader',
-                    // Compiles Sass to CSS
                     'sass-loader',
                     ],
             },
             {
             test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                     presets: ['@babel/preset-env']
                     }
                 }
             },
