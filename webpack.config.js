@@ -32,10 +32,7 @@ const optimization = () => {
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: {
-        main: ['@babel/polyfill', './index.js'],
-        analytics: './analytics.js'
-    }, //входная точка приложения, откуда вебпаку начать
+    entry: './app.js', //входная точка приложения, откуда вебпаку начать
     output: {
         filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
@@ -47,7 +44,8 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: 'index.html',
+            filename: 'index.html',
+            template: 'index.pug',
             minify: {
                 collapseWhitespace: isProd
             }
@@ -96,16 +94,6 @@ module.exports = {
                     ],
             },
             {
-<<<<<<< HEAD
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-            loader: 'babel-loader',
-            options: {
-                     presets: ['@babel/preset-env']
-            }
-            } 
-=======
             test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -114,7 +102,11 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
->>>>>>> e64b91f3f81f3d550be856830357d1ec9616daf4
+            },
+            {
+                test: /\.pug$/,
+                use:
+                    ['pug-loader']
             }
 
         ]
