@@ -24,7 +24,11 @@
   "homepage": "https://github.com/RetteMich/webpack-2022#readme",
   "devDependencies": {
     "@babel/core": "^7.17.10",
+<<<<<<< HEAD
     "@babel/polyfill": "^7.12.1",
+=======
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+>>>>>>> e64b91f3f81f3d550be856830357d1ec9616daf4
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
@@ -44,6 +48,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "jquery": "^3.6.0"
   }
 }

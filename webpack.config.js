@@ -96,6 +96,7 @@ module.exports = {
                     ],
             },
             {
+<<<<<<< HEAD
             test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
@@ -104,6 +105,16 @@ module.exports = {
                      presets: ['@babel/preset-env']
             }
             } 
+=======
+            test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+>>>>>>> e64b91f3f81f3d550be856830357d1ec9616daf4
             }
 
         ]
