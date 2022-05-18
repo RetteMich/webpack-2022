@@ -1,0 +1,11 @@
+.color-item__block{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.color-item__rectangle{
+    width: 120px;
+    height: 120px;
+    background: #f447ff;
+}
