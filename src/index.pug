@@ -1,16 +1,28 @@
-include ./components/plan/plan
+include ./components/color/color
+include ./components/type/type
 
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
-    title Пример страницы
+    title Ui-kit
     link(rel="stylesheet" type="text/css" href="main.css")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='icon' type='image/x-icon' href='favicon.ico')
 
   body
+    .logo
     .wrapper
-      +plan({title: "free", price: 0})
-      +plan({title: "personal", price: 25})
-      +plan({title: "business", price: 50, isBusiness: true})
-      +plan({title: "ultimate", price: 99})
-
+      .color__block
+        +color-item({title: "Dark Shade 100%", hex: "#1F2041"})
+        +color-item({title: "Dark Shade 75%", hex: "#1F2041"})
+        +color-item({title: "Dark Shade 50%", hex: "#1F2041"})
+        +color-item({title: "Dark Shade 25%", hex: "#1F2041"})
+        +color-item({title: "Dark Shade 5%", hex: "#1F2041"})
+        +color-item({title: "Purple", hex: "#BC9CFF"})
+        +color-item({title: "Green", hex: "#6FCF97"})
+      .type__block
+        +type-item({type: "H1", text: "This one is the sub-section or widget title"})
+        +type-item({type: "H2", text: "Next one is the item title inside widgets"})
+        +type-item({type: "H3", text: "This is a label or CTA text"})
+        +type-item({type: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
