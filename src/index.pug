@@ -1,5 +1,5 @@
-include ./components/color/color
-include ./components/type/type
+include ./components/color-list/color-list
+include ./components/type-list/type-list
 
 doctype html
 html(lang="en")
@@ -11,7 +11,8 @@ html(lang="en")
     link(rel='icon' type='image/x-icon' href='favicon.ico')
 
   body
-    .logo
+    header.header 
+      .header__logo
     .wrapper
       .color__block
         +color-item({title: "Dark Shade 100%", hex: "#1F2041"})
@@ -21,8 +22,8 @@ html(lang="en")
         +color-item({title: "Dark Shade 5%", hex: "#1F2041"})
         +color-item({title: "Purple", hex: "#BC9CFF"})
         +color-item({title: "Green", hex: "#6FCF97"})
-      .type__block
-        +type-item({type: "H1", text: "This one is the sub-section or widget title"})
-        +type-item({type: "H2", text: "Next one is the item title inside widgets"})
-        +type-item({type: "H3", text: "This is a label or CTA text"})
-        +type-item({type: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+      //.type__block
+        +type-item({type: "H1", description: "This one is the sub-section or widget title"})
+        +type-item({type: "H2", description: "Next one is the item title inside widgets"})
+        +type-item({type: "H3", description: "This is a label or CTA text"})
+        +type-item({type: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
