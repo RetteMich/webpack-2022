@@ -1,8 +1,0 @@
-@import "components/type/type.css";
-@import "components/color/color.css";
-
-.wrapper{
-  border: 1px solid blue;
-  display: flex;
-  flex-direction: row;
-}

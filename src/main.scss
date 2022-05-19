@@ -1,0 +1,15 @@
+@import "components/type-list/type-list.scss";
+@import "components/color-list/color-list.scss";
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: aqua;
+
+.wrapper {
+  border: 1px solid $primary-color;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
