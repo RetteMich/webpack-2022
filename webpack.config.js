@@ -38,6 +38,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
     },
     optimization: optimization(),
+    devServer: {
+        watchFiles: ['src/**/*.pug', 'src/**/*.scss'],
+
+    },
+    watchOptions: {
+        ignored: /node_modules/,
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: 'index.pug',
