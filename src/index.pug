@@ -1,5 +1,6 @@
-include ./components/color-list/color-list
-include ./components/type-list/type-list
+include ./blocks/color-list/color-list
+include ./blocks/type-list/type-list
+include ./blocks/ui-kit-header/ui-kit-header
 
 doctype html
 html(lang="en")
@@ -11,8 +12,8 @@ html(lang="en")
     link(rel='icon' type='image/x-icon' href='favicon.ico')
 
   body
-    header.header 
-      .header__logo
+    header.ui-kit-header
+      +ui-kit-header
     .wrapper
       .color__block
         +color-item({title: "Dark Shade 100%", hex: "#1F2041"})
