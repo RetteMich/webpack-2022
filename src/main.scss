@@ -1,15 +1,30 @@
-@import "components/type-list/type-list.scss";
-@import "components/color-list/color-list.scss";
+@import "blocks/type-list/type-list.scss";
+@import "blocks/color-list/color-list.scss";
+@import "blocks/ui-kit-header/ui-kit-header.scss";
 
-$font-stack: Helvetica, sans-serif;
+$font-stack: Helvetica,
+sans-serif;
 $primary-color: aqua;
 
-.wrapper {
-  border: 1px solid $primary-color;
-  display: flex;
-  flex-direction: row;
+body {
+  margin: 0;
+  padding: 0;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 67px 0 0 150px;
 
+}
 
+.color__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 610px;
+}
 
+.ui-kit-header {
+  padding: 30px 0 0 30px;
+}
