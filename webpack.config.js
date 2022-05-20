@@ -1,7 +1,9 @@
 const path = require('path')
 //подключаем плагины
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
@@ -15,11 +17,10 @@ console.log('IS DEV:', isDev)
 const optimization = () => {
     const config = {
         splitChunks: {
-        chunks: 'all'
+            chunks: 'all'
         }
     }
-    if (isProd)
-    {
+    if (isProd) {
         config.minimizer = [
             new TerserWebpackPlugin(),
             new CssMinimizerWebpackPlugin()
@@ -34,7 +35,7 @@ module.exports = {
     mode: 'development',
     entry: './index.js', //входная точка приложения, откуда вебпаку начать
     output: {
-        filename: '[name].[contenthash].js',//когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
+        filename: '[name].[contenthash].js', //когда вебпак соберет все js-скрипты, получим файлы bundle с именами от хэшей
         path: path.resolve(__dirname, 'dist') //Вебпак будет складывать в папку дист в текущей директории бандл
     },
     optimization: optimization(),
@@ -54,20 +55,17 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/favicon.ico'),
-                    to: path.resolve(__dirname, 'dist')
-                }
-            ]
+            patterns: [{
+                from: path.resolve(__dirname, 'src/favicon.ico'),
+                to: path.resolve(__dirname, 'dist')
+            }]
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         })
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
@@ -76,31 +74,27 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
-               test: /\.s[ac]ss$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
-                   'style-loader',
+                    'style-loader',
                     'css-loader',
                     'sass-loader',
-                    ],
+                ],
             },
             {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                     presets: ['@babel/preset-env']
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
                     }
                 }
             },
             {
                 test: /\.pug$/,
-                use:
-                    ['pug-loader']
+                use: ['pug-loader']
             }
-
         ]
-            
     }
-
 }
