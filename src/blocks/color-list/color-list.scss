@@ -19,25 +19,29 @@
 }
 
 .color-item_dark-shade-100 {
-  background-color: #1f2041;
+  background: #1F2041;
   border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
 .color-item_dark-shade-75 {
-  background-color: #1f204175;
+  background-color: rgba(31, 32, 65, 0.75);
+  border: 1px solid black;
   box-sizing: border-box;
 }
 
 .color-item_dark-shade-50 {
-  background-color: #1f204150;
+  background-color: rgba(31, 32, 65, 0.50);
 }
 
 .color-item_dark-shade-25 {
-  background-color: #1f204125;
+  background-color: rgba(31, 32, 65, 0.25);
 }
 
 .color-item_dark-shade-5 {
-  background-color: #1f204105;
+  background-color: rgba(31, 32, 65, 0.05);
 }
 
 .color-item_purple {
