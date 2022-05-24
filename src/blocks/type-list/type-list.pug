@@ -1,4 +1,26 @@
 mixin type-item(options)
-  .type-item__block
-    .type-item__type= options.type
-    .type-item__description= options.description
+  -
+    let typeText = options.type;
+    if (typeText.includes('1')){
+      sizeText = 'type-item__text_h1';
+      weightText = 'type-item__text_bold';
+      hueText = $
+    }
+    else if (typeText.includes('2')){
+      sizeText = 'type-item__text_h2';
+      weightText = 'type-item__text_bold';
+    }
+    else if (typeText.includes('3')){
+      sizeText = 'type-item__text_h3';
+      weightText = 'type-item__text_bold';
+    }
+    else {
+      sizeText = 'type-item__text_body';
+      weightText = '';
+      colorText = 'type-item__text_dark-shade75'
+    }
+      
+  .type-item
+    .type-item__header(class = sizeText)= options.type 
+    .type-item__description(class = [sizeText, weightText, colorText])= options.description
+    //Надо исправить непрозрачность у заголовка текста body на 0,25
