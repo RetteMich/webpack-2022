@@ -1,5 +1,45 @@
-.type-item__block{
+@mixin replace-font {}
+
+.type-item {
   border: 1px solid green;
   display: flex;
   flex-direction: row;
+}
+
+.type-item__header,
+.type-item__description {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.type-item__text_h1 {
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.type-item__text_h2 {
+  font-size: 19px;
+  line-height: 23px;
+}
+
+.type-item__text_h3 {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.type-item__text_body {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.type-item__text_bold {
+  font-weight: 700;
+  color: rgba(31, 32, 65, 1);
+}
+
+.type-item__text_dark-shade75 {
+  color: rgba(31, 32, 65, 0.75);
+
 }
