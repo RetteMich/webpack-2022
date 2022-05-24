@@ -1,7 +1,8 @@
 .color-item {
   display: flex;
   margin: 0;
-  padding-right: 40px;
+  justify-content: start;
+  align-items: center;
 }
 
 .color-item__rectangle {
@@ -12,9 +13,8 @@
 
 .color-item_dark-shade-100 {
   background: #1F2041;
-  border: 1px solid #000000;
+  border: 1px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
   box-sizing: border-box;
 }
 
@@ -44,20 +44,27 @@
   background-color: #6fcf97;
 }
 
+.color-item__text {
+  color: #1F2041;
+  padding-left: 40px;
+
+}
+
 .color-item__title {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 19px;
   line-height: 28px;
-  display: flex;
-  align-items: center;
-}
-
-.color-item__title {
   margin: 0;
+
 }
 
 .color-item__hex {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
   margin: 0;
+  line-height: 28px;
 }
