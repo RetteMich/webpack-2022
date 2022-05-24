@@ -1,7 +1,7 @@
 @import "blocks/type-list/type-list.scss";
 @import "blocks/color-list/color-list.scss";
 @import "blocks/ui-kit-header/ui-kit-header.scss";
-//@import "assets/fonts/fonts.scss"; не работает
+@import "assets/fonts/fonts.scss";
 
 $font-stack: Helvetica,
 sans-serif;
@@ -12,11 +12,13 @@ body {
   padding: 0;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  margin: 67px 0 0 150px;
+.ui-kit-header {
+  padding: 30px 0 0 30px;
+}
 
+.color_and_types {
+  display: flex;
+  margin: 67px 158px 0 150px;
 }
 
 .color__block {
@@ -26,6 +28,6 @@ body {
   height: 610px;
 }
 
-.ui-kit-header {
-  padding: 30px 0 0 30px;
+.type__block {
+  //justify-self: end;
 }
