@@ -1,7 +1,7 @@
 mixin color-item(options)
   -
     let colorName = options.title.toLowerCase();
-    if (options.title.includes('100%')){
+    if (colorName.includes('100%')){
       colorName = 'color-item_dark-shade-100';
     }
     else if (colorName.includes('75%')){
