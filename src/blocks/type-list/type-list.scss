@@ -1,9 +1,11 @@
 @mixin replace-font {}
 
 .type-item {
-  border: 1px solid green;
   display: flex;
-  flex-direction: row;
+}
+
+.type-item:last-child {
+  max-width: 368px
 }
 
 .type-item__header,
@@ -12,6 +14,15 @@
   font-style: normal;
   font-weight: 400;
   color: rgba(31, 32, 65, 0.25);
+}
+
+.type-item__header {
+  text-align: right;
+  min-width: 37px;
+}
+
+.type-item__description {
+  padding-left: 30px;
 }
 
 .type-item__text_h1 {
