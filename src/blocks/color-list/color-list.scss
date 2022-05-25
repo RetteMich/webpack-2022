@@ -1,6 +1,5 @@
 .color-item {
   display: flex;
-  margin: 0;
   justify-content: start;
   align-items: center;
 }
@@ -11,43 +10,42 @@
   border-radius: 6px;
 }
 
-.color-item_dark-shade-100 {
+.color-item__rectangle_dark-shade-100 {
   background: #1F2041;
   border: 1px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
 }
 
-.color-item_dark-shade-75 {
+.color-item__rectangle_dark-shade-75 {
   background-color: rgba(31, 32, 65, 0.75);
   border: 1px solid black;
   box-sizing: border-box;
 }
 
-.color-item_dark-shade-50 {
+.color-item__rectangle_dark-shade-50 {
   background-color: rgba(31, 32, 65, 0.50);
 }
 
-.color-item_dark-shade-25 {
+.color-item__rectangle_dark-shade-25 {
   background-color: rgba(31, 32, 65, 0.25);
 }
 
-.color-item_dark-shade-5 {
+.color-item__rectangle_dark-shade-5 {
   background-color: rgba(31, 32, 65, 0.05);
 }
 
-.color-item_purple {
+.color-item__rectangle_purple {
   background-color: #bc9cff;
 }
 
-.color-item_green {
+.color-item__rectangle_green {
   background-color: #6fcf97;
 }
 
 .color-item__text {
   color: #1F2041;
   padding-left: 40px;
-
 }
 
 .color-item__title {
