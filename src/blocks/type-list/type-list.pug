@@ -1,6 +1,7 @@
 mixin type-item(options)
   -
     let typeText = options.type;
+
     if (typeText.includes('1')){
       sizeText = 'type-item__text_h1';
       weightText = 'type-item__text_bold';
@@ -20,7 +21,7 @@ mixin type-item(options)
       colorText = 'type-item__text_dark-shade75'
     }
       
-  .type-item
-    .type-item__header(class = sizeText)= options.type 
-    .type-item__description(class = [sizeText, weightText, colorText])= options.description
+  .type-item(class = sizeText)
+    .type-item__header= options.type 
+    .type-item__description(class = [weightText, colorText])= options.description
     //Надо исправить непрозрачность у заголовка текста body на 0,25
