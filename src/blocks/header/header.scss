@@ -1,15 +1,19 @@
-.header {
+.header__body {
     display: flex;
+    padding: 15px 140px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .header__menu {
     display: flex;
 }
 
-&_unauthorized {
-    color: rebeccapurple;
+.header__authorization_unauthorized {
+    display: flex;
 }
 
-&_authorized {
+.header__authorization_authorized {
     color: rebeccapurple;
 }
