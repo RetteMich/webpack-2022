@@ -1,0 +1,25 @@
+mixin header(isLogin)
+    header.header
+        .header__logo
+            +logo
+        .header__menu
+            .header__navigation
+                +header__navigation({
+                    navigationList: [
+                        {text: "О нас", active: true},
+                        {text: "Услуги", dropdown: true},
+                        {text: "Вакансии"},
+                        {text: "Новости"},
+                        {text: "Соглашения", dropdown: true}
+                        ]
+                    })
+        .header__authorization
+            if (isLogin)
+                .header__authorization_unauthorized
+                    +button 
+                    +button
+            else 
+                .header__authorization_authorized
+                    .username Юлий Цезарь
+                    //- +header__button-item
+                    //- +header__button-item

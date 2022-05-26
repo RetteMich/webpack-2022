@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+}
+
+.header__menu {
+    display: flex;
+}
+
+&_unauthorized {
+    color: rebeccapurple;
+}
+
+&_authorized {
+    color: rebeccapurple;
+}
