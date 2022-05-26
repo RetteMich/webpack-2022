@@ -1,0 +1,23 @@
+.color-and-types {
+    display: flex;
+    margin: 67px 158px 0 150px;
+    max-width: 1132px;
+    justify-content: space-between;
+}
+
+.color-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 610px;
+}
+
+.type-list {
+    max-width: 436px;
+    max-height: 321px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+//перенести все по файлам 
