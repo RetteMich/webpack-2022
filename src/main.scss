@@ -1,21 +1,15 @@
-@import "pages/colors_and_types/colors_and_types.scss";
+@import "pages/colors_and_types/colors_and_types";
 @import "pages/headers_and_footers/headers_and_footers";
 
-@import "blocks/type-list/type-list.scss";
-@import "blocks/color-list/color-list.scss";
-@import "blocks/ui-kit-header/ui-kit-header.scss";
-@import "assets/fonts/fonts.scss";
-@import "blocks/logo/logo.scss";
+@import "src/styles/variables.scss";
+@import "blocks/type-list/type-list";
+@import "blocks/color-list/color-list";
+@import "blocks/ui-kit-header/ui-kit-header";
+@import "assets/fonts/fonts";
+@import "blocks/logo/logo";
 @import "blocks/navigation/navigation";
 @import "blocks/button/button";
-
-$font-stack: Helvetica,
-sans-serif;
-$primary-color: aqua;
-
-$darkShade: #1F2041;
-$purple: #BC9CFF;
-$green: #6FCF97;
+@import "blocks/header/header";
 
 body {
   margin: 0;
