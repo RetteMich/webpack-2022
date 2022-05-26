@@ -1,11 +1,21 @@
+@import "pages/colors_and_types/colors_and_types.scss";
+@import "pages/headers_and_footers/headers_and_footers";
+
 @import "blocks/type-list/type-list.scss";
 @import "blocks/color-list/color-list.scss";
 @import "blocks/ui-kit-header/ui-kit-header.scss";
 @import "assets/fonts/fonts.scss";
+@import "blocks/logo/logo.scss";
+@import "blocks/navigation/navigation";
+@import "blocks/button/button";
 
 $font-stack: Helvetica,
 sans-serif;
 $primary-color: aqua;
+
+$darkShade: #1F2041;
+$purple: #BC9CFF;
+$green: #6FCF97;
 
 body {
   margin: 0;
@@ -15,27 +25,3 @@ body {
 .ui-kit-header {
   padding: 30px 0 0 30px;
 }
-
-.color-and-types {
-  display: flex;
-  margin: 67px 158px 0 150px;
-  max-width: 1132px;
-  justify-content: space-between;
-}
-
-.color-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 610px;
-}
-
-.type-list {
-  max-width: 436px;
-  max-height: 321px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-//перенести все по файлам 
