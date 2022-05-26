@@ -1,11 +1,12 @@
 .navigation__list {
     display: flex;
+    list-style-type: none;
 }
 
 .navigation__item_active {
-    color: green;
+    color: $designColor_second;
 }
 
 .navigation__item_dropdown {
-    color: red;
+    color: $designColor_first;
 }
