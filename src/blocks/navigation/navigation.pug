@@ -1,0 +1,12 @@
+mixin header__navigation({navigationList=[]})
+    nav.navigation 
+        ui.navigation__list
+            each navigationItem in navigationList
+                li.navigation__item
+                    -
+                        let isActive= navigationItem.active;
+                        let hasDropdown= navigationItem.dropdown;
+                    
+                    a(class = isActive ? 'navigation__item_active' : '',
+                     class = hasDropdown ? 'navigation__item_dropdown' : '') #{navigationItem.text}
+                     

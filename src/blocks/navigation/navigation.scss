@@ -1,0 +1,11 @@
+.navigation__list {
+    display: flex;
+}
+
+.navigation__item_active {
+    color: green;
+}
+
+.navigation__item_dropdown {
+    color: red;
+}
