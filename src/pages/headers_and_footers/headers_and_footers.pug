@@ -1,4 +1,8 @@
 mixin headers_and_footers
     .headers_and_footers
-        +header(!isLogin)
-        +header(isLogin)
+        header.ui-kit-header
+            +ui-kit-header
+        header.header
+            +header(!isLogin)
+        header.header
+            +header(isLogin)

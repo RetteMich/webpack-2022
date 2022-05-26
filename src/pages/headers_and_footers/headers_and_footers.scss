@@ -1,4 +1,16 @@
 .headers_and_footers {
-    margin-top: 100px;
+    background: #F4F4F6; //margin-bottom: 1600px;
+}
 
+.header {
+    height: 70px;
+}
+
+.header:first-child {
+    //отвалился псевдокласс
+    margin-bottom: 40px;
+}
+
+.ui-kit-header {
+    margin-bottom: 62px;
 }
