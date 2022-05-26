@@ -11,40 +11,40 @@
 }
 
 .color-item__rectangle_dark-shade-100 {
-  background: #1F2041;
+  background: $textColor;
   border: 1px solid black;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
 }
 
 .color-item__rectangle_dark-shade-75 {
-  background-color: rgba(31, 32, 65, 0.75);
+  background-color: $textColor_75;
   border: 1px solid black;
   box-sizing: border-box;
 }
 
 .color-item__rectangle_dark-shade-50 {
-  background-color: rgba(31, 32, 65, 0.50);
+  background-color: $textColor_50;
 }
 
 .color-item__rectangle_dark-shade-25 {
-  background-color: rgba(31, 32, 65, 0.25);
+  background-color: $textColor_25;
 }
 
 .color-item__rectangle_dark-shade-5 {
-  background-color: rgba(31, 32, 65, 0.05);
+  background-color: $textColor_05;
 }
 
 .color-item__rectangle_purple {
-  background-color: #bc9cff;
+  background-color: $designColor_first;
 }
 
 .color-item__rectangle_green {
-  background-color: #6fcf97;
+  background-color: $designColor_second;
 }
 
 .color-item__text {
-  color: #1F2041;
+  color: $textColor;
   padding-left: 40px;
 }
 
