@@ -9,6 +9,9 @@ include ./blocks/logo/logo
 include ./blocks/navigation/navigation
 include ./blocks/button/button
 include ./blocks/header/header
+include ./blocks/footer/footer
+include ./blocks/copyright/copyright
+include ./blocks/footer-body/footer-body
 
 doctype html
 html(lang="en")
@@ -20,7 +23,6 @@ html(lang="en")
     link(rel='icon' type='image/x-icon' href='favicon.ico')
 
   body
-    header.ui-kit-header
-      +ui-kit-header
     +color-and-types
-    +headers_and_footers
+    .headers_and_footers
+      +headers_and_footers
