@@ -1,0 +1,60 @@
+mixin footer-body(footerBlocks)
+    .footer-body__describe
+        .footer-body__logo 
+        .footer-body__text-describe
+    nav.footer-body__navigation
+        each footerBlock in footerBlocks
+            -
+                let className = "footer-body__"+ footerBlocks[footerBlock];
+            if (footerBlock==footerBlocks.describe)
+                .isDescribe(class=$footerBlocks) gggggggg
+            else if (footerBlock==footerBlocks.subscribe)
+                .isSubscribe(class=className) gggggggggggg
+            else
+                .OTHER OTHER               
+                //- -
+                //-     let className = footer-body__+ footerBlock.toString();
+                //- ui(class = className)
+                //-     each item in footerBlock
+                //-         li.footer-body__link
+                //-             if (item.title) 
+                //-                 a(class = 'navigation__item_active') #{item.title}
+                //-             else
+                //-                 a(class = 'navigation__item_active') #{item.text}
+    .footer-body__subscribe
+
+
+
+
+
+    //-     -
+    //-         let describe = options.describe;
+    //-         let navigationList = options.navigationList;
+    //-         let aboutList = options.aboutList;
+    //-         let supportList = options.supportList;
+    //-         let subscribe = options.subscribe;
+    //-     ui.footer-body__navigation-list
+    //-         each item in navigationList
+    //-             li.footer-body__link
+    //-                 if (item.title) 
+    //-                     a(class = 'navigation__item_active') #{item.title}
+    //-                 else
+    //-                     a(class = 'navigation__item_active') #{item.text}
+    //-     ui.footer-body__about-list
+    //-         each item in aboutList
+    //-             li.footer-body__link
+    //-                 if (item.title) 
+    //-                     a(class = 'navigation__item_active') #{item.title}
+    //-                 else
+    //-                     a(class = 'navigation__item_active') #{item.text}
+    //-     ui.footer-body__support-list
+    //-         each item in supportList
+    //-             li.footer-body__link
+    //-                 if (item.title) 
+    //-                     a(class = 'navigation__item_active') #{item.title}
+    //-                 else
+    //-                     a(class = 'navigation__item_active') #{item.text}
+           
+
+
+    //- .footer-body__subscribe
