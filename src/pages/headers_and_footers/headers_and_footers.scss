@@ -2,13 +2,16 @@
     background: #F4F4F6; //margin-bottom: 1600px;
 }
 
-.header {
-    height: 70px;
-}
-
-.header:first-child {
+.header-logout,
+.header-login,
+.footer {
     //отвалился псевдокласс
     margin-bottom: 40px;
+    background-color: white; //вероятно, нужно перенести в css каждого блока внутрь
+}
+
+.footer {
+    padding: 140px 100px;
 }
 
 .ui-kit-header {

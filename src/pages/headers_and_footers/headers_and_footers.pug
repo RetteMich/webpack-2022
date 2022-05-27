@@ -2,7 +2,9 @@ mixin headers_and_footers
     .headers_and_footers
         header.ui-kit-header
             +ui-kit-header
-        header.header
+        header.header-logout
             +header(!isLogin)
-        header.header
+        header.header-login
             +header(isLogin)
+        footer.footer
+            +footer
