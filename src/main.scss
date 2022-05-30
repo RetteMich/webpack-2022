@@ -1,22 +1,25 @@
+@import "src/styles/mixins";
 @import "pages/colors_and_types/colors_and_types";
 @import "pages/headers_and_footers/headers_and_footers";
 
-@import "src/styles/variables.scss";
+@import "src/styles/variables";
 @import "blocks/type-list/type-list";
 @import "blocks/color-list/color-list";
 @import "blocks/ui-kit-header/ui-kit-header";
 @import "assets/fonts/fonts";
 @import "blocks/logo/logo";
-@import "blocks/navigation/navigation";
+@import "blocks/header-navigation/header-navigation";
 @import "blocks/button/button";
 @import "blocks/header/header";
 @import "blocks/footer/footer";
 @import "blocks/footer-body/footer-body";
 @import "blocks/copyright/copyright";
 
+
 body {
   margin: 0;
   padding: 0;
+  @include basicFont;
 }
 
 .ui-kit-header {
