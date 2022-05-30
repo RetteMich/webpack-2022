@@ -1,0 +1,31 @@
+.footer-body__navigation {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-body__logo {
+    padding-bottom: 17px;
+}
+
+.footer-body__describe {
+    width: 260px;
+}
+
+.footer-body__subscribe {
+    width: 260px;
+}
+
+.footer-body__text-describe {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.navigation__title {
+    @include font_h2;
+}
+
+.navigation__text {
+    font-size: 14px;
+    line-height: 17px;
+}
