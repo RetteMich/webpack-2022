@@ -1,3 +1,9 @@
+@mixin color-list-font {
+  @include font_h2;
+  line-height: 28px;
+  margin: 0;
+}
+
 .color-item {
   display: flex;
   justify-content: start;
@@ -49,20 +55,10 @@
 }
 
 .color-item__title {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 28px;
-  margin: 0;
-
+  @include color-list-font;
 }
 
 .color-item__hex {
-  font-family: 'Montserrat';
-  font-style: normal;
+  @include color-list-font;
   font-weight: 400;
-  font-size: 19px;
-  margin: 0;
-  line-height: 28px;
 }
