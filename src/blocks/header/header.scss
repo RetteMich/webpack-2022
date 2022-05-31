@@ -10,10 +10,21 @@
     display: flex;
 }
 
-.header__authorization_unauthorized {
+.button {
     display: flex;
 }
 
 .header__authorization_authorized {
     color: rebeccapurple;
+}
+
+.button__button-sign-in {
+    width: 87px;
+    height: 34px;
+
+}
+
+.button__button-sign-up {
+    width: 196px;
+    height: 34px;
 }
