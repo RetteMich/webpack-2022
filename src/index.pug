@@ -1,5 +1,6 @@
 include ./pages/colors_and_types/colors_and_types
 include ./pages/headers_and_footers/headers_and_footers
+include ./pages/form-elements/form-elements
 
 include ./blocks/color-list/color-list
 include ./blocks/type-list/type-list
@@ -12,6 +13,7 @@ include ./blocks/header/header
 include ./blocks/footer/footer
 include ./blocks/copyright/copyright
 include ./blocks/footer-body/footer-body
+include ./blocks/field/field
 
 doctype html
 html(lang="en")
@@ -24,4 +26,5 @@ html(lang="en")
 
   body
     +color-and-types
+    +form-elements
     +headers_and_footers
