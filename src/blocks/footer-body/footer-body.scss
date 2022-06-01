@@ -17,15 +17,13 @@
 }
 
 .footer-body__text-describe {
-    font-size: 14px;
-    line-height: 24px;
+    @include font_body;
 }
 
 .navigation__title {
-    @include font_h2;
+    @include font_h3;
 }
 
 .navigation__text {
-    font-size: 14px;
-    line-height: 17px;
+    @include font_body;
 }
