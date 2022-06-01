@@ -1,2 +1,9 @@
 mixin button(options)
-  .button(class = buttonClassName)= "Button"
+  if(options.filled)
+    if(options.arrow)
+      //тута залитая со стрелочкой
+    else
+      button(name=options.text class='button-filled')=options.text
+  else 
+    .button-wrapper
+      button(name=options.text class='button-with_border')=options.text
