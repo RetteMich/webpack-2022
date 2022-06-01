@@ -1,0 +1,14 @@
+.form-elements__wrapper {
+    margin: 140px 141px;
+    display: grid;
+    grid-template-rows: 321px 265px 281px 158px;
+}
+
+section {
+    border: 1px solid black;
+}
+
+.form-elements__fields-buttons {
+    display: grid;
+    grid-template-columns: 320px 320px 320px;
+}
