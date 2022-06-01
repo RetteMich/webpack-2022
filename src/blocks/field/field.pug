@@ -1,0 +1,14 @@
+mixin field(options)
+    .text-field
+        .text-field__top
+            .text-field__header= options.header
+            if (options.description)
+                .text-field__description= options.description
+        if (options.subscription)
+            .text-field__subscription= options.subscription
+            input.text-field__form-subscription
+        else 
+            .hhh
+                label.text-field__label(for="login") Логин
+                label.text-field__label(for="login") Логин2
+            input.text-field__form(type="text" name="login" id="login" placeholder="Login" value="itchief")
