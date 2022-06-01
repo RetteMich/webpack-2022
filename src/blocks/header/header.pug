@@ -14,11 +14,9 @@ mixin header(isLogin)
                 })
         .header__authorization
             if (isLogin)
-                .button
-                    .button__button-sign-in
-                        +button 
-                    .button__button-sign-up
-                        +button
+                .buttons
+                    +button({text: "Войти"})
+                    +button({text:"Зарегистрироваться",filled: true})
             else 
                 .header__authorization_authorized
                     .username Юлий Цезарь
