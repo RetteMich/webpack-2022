@@ -3,16 +3,24 @@ mixin form-elements
         +ui-kit-header
     .form-elements__wrapper
         section.form-elements__fields-buttons
-            .form-elements__fields-calendar
-                +field({header: "Text field", description: "Default", mask: "Email"})
-                //- +field({header:"Text field", description: "Hover / Focus", mask: "This is pretty awesome"})
-                //- +field({header:"Dropdown", mask: "Сколько гостей", hasArrow:true})
-                //- +field({header:"masked text field", mask: "ДД.ММ.ГГГГ"})
+            .form-elements__fields-calendars
+                .form-elements__fields
+                    +field({header: "Text field", description: "Default", mask: "Email"})
+                    +field({header:"Text field", description: "Hover / Focus", mask: "This is pretty awesome"})
+                    +field({header:"Dropdown", mask: "Сколько гостей"})
+                    +field({header:"masked text field", mask: "ДД.ММ.ГГГГ"})
+                .form-elements__calendars
+                    +field({header: "date Dropdown", description: "Default", mask: "Email"})
+                    +field({header:"filter date dropdown", description: "Hover / Focus", mask: "This is pretty awesome"})
+                    +field({header:"subscription text field", mask: "Email", isSubscription: true, subscriptionText:"Получайте специальные предложения и новости сервиса"})
                 //- +field({header:"subscription text field", isSubscription: true})
 
             .form-elements__function-buttons col2
             .form-elements__buttons col3
         section.form-elements__dropdowns aaa
         section.form-elements__lists bbb
-        section.form-elements__review ccc
+        section.form-elements__review
+            .form-elements__infographic cccc1
+            .form-elements__comment cccc2
+
 
