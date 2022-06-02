@@ -1,14 +1,43 @@
 .form-elements__wrapper {
     margin: 140px 141px;
     display: grid;
-    grid-template-rows: 321px 265px 281px 158px;
-}
-
-section {
-    border: 1px solid black;
+    grid-template-rows: 636px 265px 281px 158px;
+    row-gap: 100px;
 }
 
 .form-elements__fields-buttons {
     display: grid;
-    grid-template-columns: 320px 320px 320px;
+    //border: 1px solid black;
+    grid-template-columns: 320px auto 320px;
+    column-gap: 126px;
+    grid-auto-columns: minmax(320px, auto);
+}
+
+
+.form-elements__comment {
+    grid-column: 2/4;
+}
+
+.form-elements__fields-calendars,
+.form-elements__function-buttons,
+.form-elements__buttons,
+.form-elements__infographic,
+.form-elements__comment {
+    // border: 1px solid black;
+}
+
+.form-elements__fields {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+}
+
+.form-elements__calendars {
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
