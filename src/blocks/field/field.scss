@@ -1,8 +1,48 @@
-.hhh {
-    display: flex;
-    justify-content: space-between;
-}
-
 .text-field {
-    width: 300px;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        @include font_h3;
+    }
+
+    &__description {
+        font-weight: 400;
+        color: $textColor_50;
+    }
+
+    &__form {
+        @include font_body;
+        width: 320px;
+        height: 44px;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid $textColor_25;
+        border-radius: 4px;
+        color: $textColor_25;
+        padding-left: 14px;
+
+        &:hover {
+            border: 1px solid $textColor_50;
+            border-color: $textColor_50;
+        }
+
+        &:focus {
+            outline: 1px solid $textColor_50;
+
+            border-style: none;
+            border: none;
+            border: 1px solid $textColor_25;
+            background-color: white;
+            border-color: inherit;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            color: $textColor_25;
+        }
+    }
+
 }
