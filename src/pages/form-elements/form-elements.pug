@@ -15,7 +15,17 @@ mixin form-elements
                     +field({header:"subscription text field", mask: "Email", isSubscription: true, subscriptionText:"Получайте специальные предложения и новости сервиса"})
                 //- +field({header:"subscription text field", isSubscription: true})
 
-            .form-elements__function-buttons col2
+            .form-elements__function-buttons
+                fieldset
+                    legend Choose your favorite monster
+                    .checkbox-list
+                        .checkbox-list__item
+                            +checkbox
+                        //- .checkbox-list__item
+                        //-     +checkbox
+                        //- .checkbox-list__item
+                        //-     +checkbox
+
             .form-elements__buttons col3
         section.form-elements__dropdowns aaa
         section.form-elements__lists bbb
