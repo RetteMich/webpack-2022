@@ -16,15 +16,19 @@ mixin form-elements
                 //- +field({header:"subscription text field", isSubscription: true})
 
             .form-elements__function-buttons
-                fieldset
-                    legend Choose your favorite monster
-                    .checkbox-list
-                        .checkbox-list__item
-                            +checkbox
-                        //- .checkbox-list__item
-                        //-     +checkbox
-                        //- .checkbox-list__item
-                        //-     +checkbox
+                .checkbox-list
+                    label.checkbox-list__header Checkbox Buttons
+                    .checkbox-list__item
+                        +checkbox({text:"Можно курить", isDisabled:true})
+                    .checkbox-list__item
+                        +checkbox({text:"Можно с питомцами"})
+                    .checkbox-list__item
+                        +checkbox({text:"Можно пригласить гостей (до 10 человек)"})
+                .radio-list
+                    label.radio-list__header Radio Buttons
+                    .radio
+                        +radio-button({text:"Мужчина", isChecked:true, name:"gender"})
+                        +radio-button({text:"Женщина", name:"gender"})
 
             .form-elements__buttons col3
         section.form-elements__dropdowns aaa
