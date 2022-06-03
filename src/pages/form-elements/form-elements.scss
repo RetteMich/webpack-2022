@@ -18,14 +18,6 @@
     grid-column: 2/4;
 }
 
-.form-elements__fields-calendars,
-.form-elements__function-buttons,
-.form-elements__buttons,
-.form-elements__infographic,
-.form-elements__comment {
-    // border: 1px solid black;
-}
-
 .form-elements__fields {
     height: 320px;
     display: flex;
@@ -45,4 +37,15 @@
 .checkbox-list {
     display: flex;
     flex-direction: column;
+    width: 266px;
+}
+
+.checkbox-list__header {
+    @include font_h3;
+    margin-bottom: 1.4em;
+}
+
+.checkbox-list__item {
+    margin-bottom: 0.65em;
+    max-width: 266px;
 }
