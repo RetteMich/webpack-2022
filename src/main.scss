@@ -1,9 +1,9 @@
 @import "src/styles/mixins";
+@import "src/styles/variables";
 @import "pages/colors_and_types/colors_and_types";
 @import "pages/headers_and_footers/headers_and_footers";
 @import "pages/form-elements/form-elements";
 
-@import "src/styles/variables";
 @import "blocks/type-list/type-list";
 @import "blocks/color-list/color-list";
 @import "blocks/ui-kit-header/ui-kit-header";
@@ -17,6 +17,7 @@
 @import "blocks/copyright/copyright";
 @import "blocks/field/field";
 @import "blocks/checkbox/checkbox";
+@import "blocks/radio/radio";
 
 
 body {

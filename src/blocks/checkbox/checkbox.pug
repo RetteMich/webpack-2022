@@ -1,15 +1,6 @@
-mixin checkbox()
+mixin checkbox(options)
     .checkbox
-        label.checkbox__label checkbox
-            input.checkbox__input(type="checkbox")
-            span.checkbox__box
-
-
-
-    //- .checkbox
-    //-     input(id="c1" type="checkbox")
-    //-     label(for="c1")Checkbox
-    //- label(for="scales") Scales
-    //-     input(type="checkbox" name="subscribe" id="subscribe-field")
-    //-     span(class="highload2")
-
+        label.checkbox__label
+            input.checkbox__input(type="checkbox" disabled=options.isDisabled tabindex="-1")
+            span.checkbox__box(tabindex="0")
+            =options.text
