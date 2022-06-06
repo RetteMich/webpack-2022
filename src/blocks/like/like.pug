@@ -1,2 +1,13 @@
-mixin like(value, isPressed)
-    .icon dddd
+mixin like(options)
+    -
+        let iconClass = "like__icon";
+        let counterClass = "like__counter";
+        let likeClass = "like";
+
+        if (options.isPressed) {
+            likeClass += "-pressed";
+            iconClass += "-pressed";
+            counterClass += "-pressed";}
+    .like(class = likeClass)
+        span.material-icons(class = iconClass) favorite
+        span(class=counterClass)=options.value
