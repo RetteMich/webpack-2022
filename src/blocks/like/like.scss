@@ -1,10 +1,25 @@
-.icon {
-    padding: 4px 2px 3px 4px;
-    font: 0.7143rem 'Material Icons',
-        sans-serif;
+.material-icons {
+  padding: 4px 2px 3px 4px;
+  color: $designColor_second;
+}
+.like {
+  border: 1px solid $textColor_50;
+  &-pressed {
+    border: 1px solid $designColor_first;
+  }
+}
 
-    &::before {
-        color: $textColor_25;
-        content: '\e87e';
-    }
+.like__icon {
+  color: red;
+
+  &-pressed {
+    color: $designColor_first;
+  }
+}
+
+.like__counter {
+  color: red;
+  &-pressed {
+    color: $designColor_first;
+  }
 }
