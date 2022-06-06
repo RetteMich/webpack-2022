@@ -1,0 +1,10 @@
+.icon {
+    padding: 4px 2px 3px 4px;
+    font: 0.7143rem 'Material Icons',
+        sans-serif;
+
+    &::before {
+        color: $textColor_25;
+        content: '\e87e';
+    }
+}
