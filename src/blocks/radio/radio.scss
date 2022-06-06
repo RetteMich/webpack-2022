@@ -1,0 +1,38 @@
+.radio__label {
+    @include font_body;
+    display: flex;
+    color: $textColor_50;
+    margin-right: 1.5em;
+}
+
+.radio__input {
+    @include visuallyhidden;
+
+    &:checked+.radio__box {
+        background: url(./assets/images/radio.svg) center no-repeat content-box;
+        border-color: $designColor_first;
+        color: $textColor_75;
+    }
+}
+
+.radio__box {
+    border-radius: 10px;
+    border: 1px solid $textColor_25;
+    width: 1.29em;
+    height: 1.29em;
+    background-color: transparent;
+    margin-right: 0.7em;
+    align-self: center;
+    //flex-shrink: 0;
+
+    // &:focus {
+    //     outline: red solid 2px;
+    //     box-shadow: 2px right $designColor_second;
+    // }
+
+    // &:hover {
+    //     outline: red solid 2px;
+    //     border: 1px solid $designColor_second;
+    //     border-color: $designColor_second;
+    // }
+}
