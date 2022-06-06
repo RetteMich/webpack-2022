@@ -53,6 +53,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "jquery": "^3.6.0",
+    "material-icons": "^1.11.1",
     "svg-url-loader": "^7.1.1"
   }
 }
