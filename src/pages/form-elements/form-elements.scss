@@ -1,5 +1,5 @@
 .form-elements__wrapper {
-    margin: 140px 141px;
+    margin: 62px 141px 140px;
     display: grid;
     grid-template-rows: 636px 265px 281px 158px;
     row-gap: 100px;
@@ -7,6 +7,7 @@
 
 .form-elements__fields-buttons {
     display: grid;
+    margin-top: 3px;
     //border: 1px solid black;
     grid-template-columns: 320px auto 320px;
     column-gap: 126px;
@@ -34,18 +35,25 @@
     justify-content: space-between;
 }
 
-.checkbox-list {
-    display: flex;
-    flex-direction: column;
-    width: 266px;
+.checkbox-list,
+.radio-list {
+    margin-bottom: 3em;
 }
 
 .checkbox-list__header {
     @include font_h3;
-    margin-bottom: 1.4em;
+    margin-bottom: 1.35em;
+}
+
+.radio-list__header {
+    @include font_h3;
+    margin-bottom: 1.12em;
 }
 
 .checkbox-list__item {
     margin-bottom: 0.65em;
-    max-width: 266px;
+}
+
+.radio-list__items {
+    display: inline-flex;
 }

@@ -14,8 +14,8 @@
 .checkbox__box {
     border-radius: 4px;
     border: 1px solid $designColor_first;
-    width: 1.28em;
-    height: 1.28em;
+    width: 1.3em;
+    height: 1.3em;
     background-color: transparent;
     margin-right: 0.7em;
     flex-shrink: 0;
@@ -34,7 +34,7 @@
 
 .checkbox__label {
     @include font_body;
-    display: flex;
+    display: flex; //или инлайн флекс??
     line-height: 18px;
     color: $textColor_50;
     max-width: 222px;

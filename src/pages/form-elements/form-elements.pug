@@ -26,9 +26,19 @@ mixin form-elements
                         +checkbox({text:"Можно пригласить гостей (до 10 человек)"})
                 .radio-list
                     label.radio-list__header Radio Buttons
-                    .radio
+                    .radio-list__items
                         +radio-button({text:"Мужчина", isChecked:true, name:"gender"})
                         +radio-button({text:"Женщина", name:"gender"})
+                .toggle-list
+                    label.toggle-list__header Toggle
+                    .toggle-list__items
+                        +toggle({text:"Получать спецпредложения", isOn:true})
+                        +toggle({text:"Получать спецпредложения"})
+                .like-buttons
+                    label.like-buttons__header like button
+                        +like({value: 2, isPressed:true})
+                        +like({value: 12})
+
 
             .form-elements__buttons col3
         section.form-elements__dropdowns aaa
