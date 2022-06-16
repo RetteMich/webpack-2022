@@ -1,25 +1,22 @@
 .material-icons {
   padding: 4px 2px 3px 4px;
-  color: $designColor_second;
+  color: $gradient_first;
 }
 .like {
-  border: 1px solid $textColor_50;
-  &-pressed {
-    border: 1px solid $designColor_first;
+  border: 1px solid $textColor_25;
+  .like__icon,
+  .like__counter {
+    color: $textColor_25;
   }
 }
 
-.like__icon {
-  color: red;
-
-  &-pressed {
-    color: $designColor_first;
+.like-pressed {
+  border: 1px solid $designColor_first;
+  .like__icon {
+    color: $gradient_first;
   }
-}
 
-.like__counter {
-  color: red;
-  &-pressed {
+  .like__counter {
     color: $designColor_first;
   }
 }
