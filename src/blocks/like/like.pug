@@ -1,13 +1,14 @@
 mixin like(options)
-    -
-        let iconClass = "like__icon";
-        let counterClass = "like__counter";
-        let likeClass = "like";
+    //- -
+    //-     let likeClass = "like";
+    //-     let iconClass = "like__icon";
+    //-     let counterClass = "like__counter";
+        
 
-        if (options.isPressed) {
-            likeClass += "-pressed";
-            iconClass += "-pressed";
-            counterClass += "-pressed";}
-    .like(class = likeClass)
-        span.material-icons(class = iconClass) favorite
-        span(class=counterClass)=options.value
+    //-     //- if (options.isPressed) {
+    //-     //-     likeClass += "-pressed";
+    //-     //-     iconClass += "-pressed";
+    //-     //-     counterClass += "-pressed";}
+    .like
+        span.material-icons(class = "like__icon") favorite
+        span.like__counter=options.value
