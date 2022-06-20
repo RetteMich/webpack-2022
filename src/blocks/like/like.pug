@@ -1,4 +1,4 @@
 mixin like(options)
     .like(class=options.isPressed ? 'like_pressed' : '')
-        span.material-icons(class = "like__icon", description=options.isPressed ? 'favorite' : 'favorite_border')
+        span.material-icons(class = "like__icon")=options.isPressed ? 'favorite' : 'favorite_border'
         span.like__counter=options.value
