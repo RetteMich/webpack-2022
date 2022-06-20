@@ -20,16 +20,15 @@
 @import "blocks/radio/radio";
 @import "blocks/toggle/toggle";
 @import "blocks/like/like";
+@import "blocks/rating/rating";
 @import "material-icons/iconfont/material-icons.css";
 
-
-
 body {
-  margin: 0;
-  padding: 0;
-  @include basicFont;
+    margin: 0;
+    padding: 0;
+    @include basicFont;
 }
 
 .ui-kit-header {
-  padding: 30px 0 0 30px;
+    padding: 30px 0 0 30px;
 }

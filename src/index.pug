@@ -18,18 +18,19 @@ include ./blocks/checkbox/checkbox
 include ./blocks/radio/radio
 include ./blocks/toggle/toggle
 include ./blocks/like/like
+include ./blocks/rating/rating
 
 
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    title Ui-kit
-    link(rel="stylesheet" type="text/css" href="main.css")
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='icon' type='image/x-icon' href='favicon.ico')
+    head
+        meta(charset="UTF-8")
+        title Ui-kit
+        link(rel="stylesheet" type="text/css" href="main.css")
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='icon' type='image/x-icon' href='favicon.ico')
 
-  body
-    +color-and-types
-    +form-elements
-    +headers_and_footers
+    body
+        +color-and-types
+        +form-elements
+        +headers_and_footers
