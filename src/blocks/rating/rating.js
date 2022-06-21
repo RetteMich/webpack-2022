@@ -5,7 +5,7 @@ const ratingSettings = {
     startPosition: 0,
 };
 const ratingBox = document.querySelectorAll(".rating");
-const stars = rating.document.querySelectorAll(".star");
+//const stars = rating.document.querySelectorAll(".star");
 
 ratingBox.forEach((rating) => {
     // Перебирает все, вызывает функцию для каждого.
@@ -20,10 +20,11 @@ function createRating(rating) {
         rating.append(star);
     }
 
-    //const stars = rating.document.querySelectorAll(".star");
-    stars.addEventListener("click", (event) => {
-        setRating(stars, [...rating.children].indexOf(event.target));
-    });
+    const stars = rating.querySelectorAll(".star");
+    console.log(stars);
+    // stars.addEventListener("click", (event) => {
+    //     setRating(stars, [...rating.children].indexOf(event.target));
+    // });
 }
 
 // ratingBox.forEach((rating) => {
