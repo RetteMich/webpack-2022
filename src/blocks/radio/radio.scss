@@ -3,12 +3,13 @@
     display: flex;
     color: $textColor_50;
     margin-right: 1.5em;
+    cursor: pointer;
 }
 
 .radio__input {
     @include visuallyhidden;
 
-    &:checked+.radio__box {
+    &:checked + .radio__box {
         background: url(./assets/images/radio.svg) center no-repeat content-box;
         border-color: $designColor_first;
         color: $textColor_75;
@@ -23,6 +24,7 @@
     background-color: transparent;
     margin-right: 0.7em;
     align-self: center;
+
     //flex-shrink: 0;
 
     // &:focus {

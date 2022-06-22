@@ -1,11 +1,11 @@
 .checkbox__input {
     @include visuallyhidden;
 
-    &:checked+.checkbox__box {
+    &:checked + .checkbox__box {
         background: url(./assets/images/check-mark.svg) center no-repeat;
     }
 
-    &:disabled+.checkbox__box {
+    &:disabled + .checkbox__box {
         border: 1px solid $textColor_25;
         color: $textColor_50;
     }
@@ -38,4 +38,5 @@
     line-height: 18px;
     color: $textColor_50;
     max-width: 222px;
+    cursor: pointer;
 }
