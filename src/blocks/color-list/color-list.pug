@@ -1,16 +1,16 @@
 mixin color-item(options)
-  -
-    let colorName = options.title.toLowerCase();
-    (colorName.includes('100%')) ? colorName = 'color-item__rectangle_dark-shade-100' :
-    (colorName.includes('75%')) ? colorName = 'color-item__rectangle_dark-shade-75' :
-    (colorName.includes('50%')) ? colorName = 'color-item__rectangle_dark-shade-50' :
-    (colorName.includes('25%')) ? colorName = 'color-item__rectangle_dark-shade-25' :
-    (colorName.includes('5%')) ? colorName = 'color-item__rectangle_dark-shade-5' :
-    (colorName.includes('purple')) ? colorName = 'color-item__rectangle_purple' :
-    colorName = 'color-item__rectangle_green';
+    -
+        let colorName = options.title.toLowerCase();
+        (colorName.includes('100%')) ? colorName = 'color-item__rectangle_dark-shade-100' :
+        (colorName.includes('75%')) ? colorName = 'color-item__rectangle_dark-shade-75' :
+        (colorName.includes('50%')) ? colorName = 'color-item__rectangle_dark-shade-50' :
+        (colorName.includes('25%')) ? colorName = 'color-item__rectangle_dark-shade-25' :
+        (colorName.includes('5%')) ? colorName = 'color-item__rectangle_dark-shade-5' :
+        (colorName.includes('purple')) ? colorName = 'color-item__rectangle_purple' :
+        colorName = 'color-item__rectangle_green';
 
-  .color-item
-    .color-item__rectangle(class = colorName)
-    .color-item__text
-      p.color-item__title= options.title 
-      p.color-item__hex= options.hex
+    .color-item
+        .color-item__rectangle(class = colorName)
+        .color-item__text
+            p.color-item__title= options.title 
+            p.color-item__hex= options.hex

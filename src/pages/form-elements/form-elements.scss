@@ -14,7 +14,6 @@
     grid-auto-columns: minmax(320px, auto);
 }
 
-
 .form-elements__comment {
     grid-column: 2/4;
 }
@@ -25,7 +24,6 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 40px;
-
 }
 
 .form-elements__calendars {
@@ -56,4 +54,12 @@
 
 .radio-list__items {
     display: inline-flex;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.buttons__item {
+    margin: 20px;
 }
