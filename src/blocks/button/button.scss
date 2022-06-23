@@ -1,34 +1,39 @@
 @mixin button_style {
-  @include font_h3;
-  border-radius: 22px;
+    @include font_h3;
+    border-radius: 22px;
+    width: 99px;
+    height: 44px;
 }
 
-.button-filled {
-  background: $gradient_first;
-  width: 196px;
-  height: 34px;
-  @include button_style;
-  color: white;
-  border: none;
+.button {
+    display: flex;
+    background: $gradient_first;
+    box-sizing: border-box;
+    @include button_style;
+    justify-content: center;
+
+    &_with-border {
+        border: 2px solid transparent;
+        background: white content-box;
+        padding: 0;
+        @include button_style;
+        color: $designColor_first;
+    }
 }
 
-.button-wrapper {
-  display: flex;
-  background: $gradient_first;
-  border-radius: 22px;
-  box-sizing: border-box;
-  width: 87px;
-  height: 34px;
-  justify-content: center;
+.button_filled {
+    background: $gradient_first;
+    @include button_style;
+    color: white;
+    border: none;
 }
 
-.button-with_border {
-  border: 2px solid transparent;
-  background-color: white;
-  background-clip: content-box;
-  width: 87px;
-  height: 34px;
-  padding: 0;
-  @include button_style;
-  color: $designColor_first;
+.button_empty {
+    @include button_style;
+    width: 61px;
+    height: 15px;
+    background: white;
+    color: $designColor_first;
+    border: none;
+    padding: 0;
 }

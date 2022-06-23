@@ -1,9 +1,17 @@
 mixin button(options)
-  if(options.filled)
-    if(options.arrow)
-      //тута залитая со стрелочкой
-    else
-      button(name=options.text class='button-filled')=options.text
-  else 
-    .button-wrapper
-      button(name=options.text class='button-with_border')=options.text
+    -
+        let viewClassname = '';
+        let arrowClassname = '';
+        options.view ==='filled' ? viewClassname='button_filled' : 
+        options.view ==='hasBorder' ? viewClassname='button_with-border' : 
+        options.view ==='empty' ? viewClassname='button_empty' : '';
+    button(class=[viewClassname, hasArrow] disabled=isDisabled)=options.text
+
+    //- if(options.filled)
+    //-     if(options.arrow)
+    //-         //тута залитая со стрелочкой
+    //-     else
+    //-         button(name=text class='button-filled')=text
+    //- else 
+    //-     .button-wrapper
+    //-         button(name=text class='button-with_border')=text
