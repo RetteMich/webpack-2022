@@ -1,35 +1,34 @@
-@mixin button_style {
+%button-style {
     @include font_h3;
     border-radius: 22px;
     width: 99px;
     height: 44px;
 }
-
 .button {
     display: flex;
     background: $gradient_first;
     box-sizing: border-box;
-    @include button_style;
+    @extend %button-style;
     justify-content: center;
 
     &_with-border {
         border: 2px solid transparent;
         background: white content-box;
         padding: 0;
-        @include button_style;
+        @extend %button-style;
         color: $designColor_first;
     }
 }
 
 .button_filled {
     background: $gradient_first;
-    @include button_style;
+    @extend %button-style;
     color: white;
     border: none;
 }
 
 .button_empty {
-    @include button_style;
+    @extend %button-style;
     width: 61px;
     height: 15px;
     background: white;
