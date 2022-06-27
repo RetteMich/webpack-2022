@@ -39,5 +39,16 @@
 }
 
 .button_with-arrow {
+    padding: 0;
     width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button__text {
+    flex-grow: 1;
+    padding-left: 3.7em;
+}
+.button__icon {
+    width: 44px;
 }
