@@ -59,7 +59,13 @@
 .buttons {
     display: flex;
     flex-wrap: wrap;
+    max-width: 218px;
 }
 .buttons__item {
-    margin: 20px;
+    margin-bottom: 31px;
+}
+.buttons__header {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    width: 100%;
 }
