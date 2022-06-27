@@ -4,8 +4,9 @@ mixin button(options)
         let arrowClassname = '';
         options.view ==='filled' ? viewClassname='button_filled' : 
         options.view ==='hasBorder' ? viewClassname='button_with-border' : 
-        options.view ==='empty' ? viewClassname='button_empty' : '';
-    button(class=[viewClassname, hasArrow] disabled=isDisabled)=options.text
+        options.view ==='empty' ? viewClassname='button_empty' : 
+        options.hasArrow === true ? arrowClassname = 'button_with-arrow' : '';
+    button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
 
     //- if(options.filled)
     //-     if(options.arrow)
