@@ -4,9 +4,19 @@ mixin button(options)
         let arrowClassname = '';
         options.view ==='filled' ? viewClassname='button_filled' : 
         options.view ==='hasBorder' ? viewClassname='button_with-border' : 
-        options.view ==='empty' ? viewClassname='button_empty' : 
-        options.hasArrow === true ? arrowClassname = 'button_with-arrow' : '';
-    button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
+        options.view ==='empty' ? viewClassname='button_empty' : '';
+
+    if (options.hasArrow === true)
+        button(class=['button_filled', 'button_with-arrow'] disabled=options.isDisabled)
+            span.button__text=options.text
+            span.button__icon.material-icons arrow_forward
+    else
+        button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
+
+
+
+    //- options.hasArrow === true ? arrowClassname = 'button_with-arrow material-icons' : '';
+    //- button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
 
     //- if(options.filled)
     //-     if(options.arrow)
