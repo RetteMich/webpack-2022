@@ -1,0 +1,47 @@
+//@import '//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css';
+.slider {
+    max-width: 266px;
+
+    .slider__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider__body {
+        margin-top: 20px;
+        height: 6px;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid $textColor_25;
+        box-sizing: border-box;
+
+        > .ui-slider-range {
+            height: 6px;
+            box-sizing: content-box;
+            top: -1px;
+            vertical-align: middle;
+            background: $gradient_second;
+        }
+
+        > .ui-slider-handle {
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            background: $gradient_second; //gradient_second
+            border: 2px solid white;
+            top: -0.35em;
+        }
+    }
+}
+
+.slider__range {
+    max-width: 126px;
+    border: none;
+    text-align: right;
+    background-color: #fff;
+    @include font_body;
+    color: $textColor_50;
+    &:read-only {
+        outline: none;
+    }
+}
