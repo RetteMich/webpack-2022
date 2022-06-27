@@ -1,10 +1,10 @@
 mixin slider
-  link(rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css")
-  link(rel="stylesheet" href="/resources/demos/style.css")
-  p
-    label(for="amount") Price range:
-    input(type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;")
-  div(id="slider-range")
+    //link(rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css")
+    .slider
+        .slider__top
+            label.slider__header(for="amount") Range Slider
+            input.slider__range(type="text" readonly)
+        .slider__body
 
 
 
@@ -14,4 +14,3 @@ mixin slider
 //-             label.slider__header
 //-             label.slider__range
 //-         .slider__body
-        
