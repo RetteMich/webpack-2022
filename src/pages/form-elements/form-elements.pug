@@ -51,6 +51,7 @@ mixin form-elements
                     //+slider({header: "range slider", range: {min: 1000, max: 3000}})
                     +slider
                 .buttons
+                    .buttons__header buttons
                     .buttons__item
                         +button({text:'click me',view: 'filled'})
                     .buttons__item
@@ -64,7 +65,7 @@ mixin form-elements
                     .buttons__item
                         +button({text:"click me", view: 'empty', isDisabled: true})
                     .buttons__item
-                        +button({text:"click me", view: 'filled', hasArrow: true})
+                        +button({text:"перейти к оплате", view: 'filled', hasArrow: true})
 
         section.form-elements__dropdowns aaa
         section.form-elements__lists bbb
