@@ -41,14 +41,10 @@ function addMiddlePagesContent(pages, buttonsNumber) {
     console.log(currentPage);
     console.log(paginationSettings.currentPage);
     if (pageLocation(currentPage + 1) === 'end') {
-        console.log('NENF&&');
         currentPage = currentPage - 2;
     } else if (pageLocation(currentPage) === 'middle') {
         currentPage = currentPage - 1;
     }
-    console.log(currentPage);
-    console.log(paginationSettings.currentPage);
-
     for (let i = 0; i < buttonsNumber; i++) {
         if (i === 0) {
             pages[i].textContent = 'arrow_back';

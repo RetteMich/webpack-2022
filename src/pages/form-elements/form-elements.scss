@@ -14,6 +14,10 @@
     grid-auto-columns: minmax(320px, auto);
 }
 
+.form-elements__slider-buttons-pagination {
+    width: 500px;
+}
+
 .form-elements__comment {
     grid-column: 2/4;
 }
