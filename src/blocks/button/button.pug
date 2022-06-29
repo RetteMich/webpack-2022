@@ -1,9 +1,28 @@
 mixin button(options)
-  if(options.filled)
-    if(options.arrow)
-      //тута залитая со стрелочкой
+    -
+        let viewClassname = '';
+        let arrowClassname = '';
+        options.view ==='filled' ? viewClassname='button_filled' : 
+        options.view ==='hasBorder' ? viewClassname='button_with-border' : 
+        options.view ==='empty' ? viewClassname='button_empty' : '';
+
+    if (options.hasArrow === true)
+        button(class=['button_filled', 'button_with-arrow'] disabled=options.isDisabled)
+            span.button__text=options.text
+            span.button__icon.material-icons arrow_forward
     else
-      button(name=options.text class='button-filled')=options.text
-  else 
-    .button-wrapper
-      button(name=options.text class='button-with_border')=options.text
+        button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
+
+
+
+    //- options.hasArrow === true ? arrowClassname = 'button_with-arrow material-icons' : '';
+    //- button(class=[viewClassname, arrowClassname] disabled=options.isDisabled)=options.text
+
+    //- if(options.filled)
+    //-     if(options.arrow)
+    //-         //тута залитая со стрелочкой
+    //-     else
+    //-         button(name=text class='button-filled')=text
+    //- else 
+    //-     .button-wrapper
+    //-         button(name=text class='button-with_border')=text

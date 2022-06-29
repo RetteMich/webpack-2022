@@ -5,18 +5,18 @@ mixin header(isLogin)
         nav.header__navigation
             +header__navigation({
                 navigationList: [
-                    {text: "О нас", active: true},
-                    {text: "Услуги", dropdown: true},
-                    {text: "Вакансии"},
-                    {text: "Новости"},
-                    {text: "Соглашения", dropdown: true}
+                    {text: 'О нас', active: true},
+                    {text: 'Услуги', dropdown: true},
+                    {text: 'Вакансии'},
+                    {text: 'Новости'},
+                    {text: 'Соглашения', dropdown: true}
                     ]
                 })
         .header__authorization
             if (isLogin)
                 .buttons
-                    +button({text: "Войти"})
-                    +button({text:"Зарегистрироваться",filled: true})
+                    +button({text: 'Войти'})
+                    +button({text:'Зарегистрироваться',view: 'filled'})
             else 
                 .header__authorization_authorized
                     .username Юлий Цезарь

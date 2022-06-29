@@ -1,34 +1,53 @@
-@mixin button_style {
-  @include font_h3;
-  border-radius: 22px;
+%button-style {
+    @include font_h3;
+    border-radius: 22px;
+    width: 99px;
+    height: 44px;
+}
+.button {
+    display: flex;
+    background: $gradient_first;
+    box-sizing: border-box;
+    @extend %button-style;
+    justify-content: center;
+
+    &_with-border {
+        border: 2px solid transparent;
+        background: white content-box;
+        padding: 0;
+        @extend %button-style;
+        color: $designColor_first;
+    }
 }
 
-.button-filled {
-  background: $gradient_first;
-  width: 196px;
-  height: 34px;
-  @include button_style;
-  color: white;
-  border: none;
+.button_filled {
+    background: $gradient_first;
+    @extend %button-style;
+    color: white;
+    border: none;
 }
 
-.button-wrapper {
-  display: flex;
-  background: $gradient_first;
-  border-radius: 22px;
-  box-sizing: border-box;
-  width: 87px;
-  height: 34px;
-  justify-content: center;
+.button_empty {
+    @extend %button-style;
+    width: 61px;
+    height: 15px;
+    background: white;
+    color: $designColor_first;
+    border: none;
+    padding: 0;
 }
 
-.button-with_border {
-  border: 2px solid transparent;
-  background-color: white;
-  background-clip: content-box;
-  width: 87px;
-  height: 34px;
-  padding: 0;
-  @include button_style;
-  color: $designColor_first;
+.button_with-arrow {
+    padding: 0;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button__text {
+    flex-grow: 1;
+    padding-left: 3.7em;
+}
+.button__icon {
+    width: 44px;
 }
