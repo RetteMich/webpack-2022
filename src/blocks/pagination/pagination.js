@@ -1,23 +1,19 @@
 const pagination = document.querySelector('.pagination__buttons');
+const paginationCounter = document.querySelector('.pagination__counter');
 
 const paginationSettings = {
     pageCount: 15,
     cardsOnPage: 12,
-    currentPage: 6,
+    currentPage: 1,
     buttonsNumber: 6,
 };
 
 createPagination();
 
-function pageLocation() {
-    if (paginationSettings.currentPage <= 3) {
-        console.log('start');
+function pageLocation(currentPage) {
+    if (currentPage <= 3) {
         return 'start';
-    } else if (
-        paginationSettings.currentPage >=
-        paginationSettings.pageCount - 2
-    ) {
-        console.log('end');
+    } else if (currentPage >= paginationSettings.pageCount - 2) {
         return 'end';
     } else return 'middle';
 }
@@ -30,20 +26,54 @@ function addStartPagesContent(pages, buttonsNumber) {
             pages[i].textContent = paginationSettings.pageCount;
         else {
             pages[i].textContent = 'arrow_forward';
-            pages[i].classList.add('material-icons');
+            pages[i].classList.add(
+                'material-icons',
+                'pagination__button_arrow'
+            );
         }
+        if (pages[i].textContent == paginationSettings.currentPage)
+            pages[i].classList.add('pagination__button_active');
     }
 }
 
 function addMiddlePagesContent(pages, buttonsNumber) {
+    let currentPage = paginationSettings.currentPage;
+    console.log(currentPage);
+    console.log(paginationSettings.currentPage);
+    if (pageLocation(currentPage + 1) === 'end') {
+        console.log('NENF&&');
+        currentPage = currentPage - 2;
+    } else if (pageLocation(currentPage) === 'middle') {
+        currentPage = currentPage - 1;
+    }
+    console.log(currentPage);
+    console.log(paginationSettings.currentPage);
+
     for (let i = 0; i < buttonsNumber; i++) {
         if (i === 0) {
             pages[i].textContent = 'arrow_back';
-            pages[i].classList.add('material-icons');
-        } else if (i === 2 || i === buttonsNumber - 3)
+            pages[i].classList.add(
+                'material-icons',
+                'pagination__button_arrow'
+            );
+        } else if (i === 1) {
+            pages[i].textContent = '1';
+        } else if (i === 2 || i === buttonsNumber - 3) {
             pages[i].textContent = '...';
-        else if (i === 3) pages[i].textContent = '1';
-        // else if (i===buttonsNumber-2)/                                         i m here
+        } else if (i === buttonsNumber - 2) {
+            pages[i].textContent = paginationSettings.pageCount;
+        } else if (i === buttonsNumber - 1) {
+            pages[i].textContent = 'arrow_forward';
+            pages[i].classList.add(
+                'material-icons',
+                'pagination__button_arrow'
+            );
+        } else {
+            pages[i].textContent = currentPage;
+            currentPage++;
+        }
+        if (pages[i].textContent == paginationSettings.currentPage)
+            pages[i].classList.add('pagination__button_active');
     }
 }
 function addEndPagesContent(pages, buttonsNumber) {
@@ -51,156 +81,78 @@ function addEndPagesContent(pages, buttonsNumber) {
     for (let i = 0; i < buttonsNumber; i++) {
         if (i === 0) {
             pages[i].textContent = 'arrow_back';
-            pages[i].classList.add('material-icons');
+            pages[i].classList.add(
+                'material-icons',
+                'pagination__button_arrow'
+            );
         } else if (i === 1) pages[i].textContent = '1';
         else if (i === 2) pages[i].textContent = '...';
         else {
             pages[i].textContent = currentPage;
             currentPage++;
         }
+        if (pages[i].textContent == paginationSettings.currentPage)
+            pages[i].classList.add('pagination__button_active');
     }
 }
 
 function createPagination() {
-    pageLocation() === 'middle'
+    while (pagination.hasChildNodes()) {
+        pagination.removeChild(pagination.lastChild);
+    }
+    calculateNumberOfCards();
+
+    const currentPage = paginationSettings.currentPage;
+    pageLocation(currentPage) === 'middle'
         ? (buttonsNumber = paginationSettings.buttonsNumber + 3)
         : (buttonsNumber = paginationSettings.buttonsNumber);
     for (let i = 0; i < buttonsNumber; i++) {
         const button = document.createElement('button');
-        button.classList.add('pagination__page');
+        button.classList.add('pagination__button');
         pagination.append(button);
     }
-    const pages = document.querySelectorAll('.pagination__page');
+    const pages = document.querySelectorAll('.pagination__button');
 
-    pageLocation() === 'start'
+    pageLocation(currentPage) === 'start'
         ? addStartPagesContent(pages, buttonsNumber)
-        : pageLocation() === 'end'
+        : pageLocation(currentPage) === 'end'
         ? addEndPagesContent(pages, buttonsNumber)
         : addMiddlePagesContent(pages, buttonsNumber);
+
     listenPagination(pages);
 }
 
 function listenPagination(pages) {
     pages.forEach((page) => {
         page.addEventListener('click', (event) => {
-            if (page.classList.contains('pagination__page_active'))
-                page.classList.remove('pagination__page_active');
             if (
                 page.textContent != '...' &&
-                page.textContent != 'arrow_forward'
+                page.textContent != 'arrow_forward' &&
+                page.textContent != 'arrow_back'
             ) {
-                paginationSettings.currentPage = page.textContent;
-                paginationSettings.pageCount -
-                    paginationSettings.currentPage +
-                    1 >=
-                paginationSettings.buttonsNumber
-                    ? showPages(pages)
-                    : showLastPages(pages);
-            } else if (page.textContent === 'arrow_forward') {
-                paginationSettings.currentPage += 1;
-                paginationSettings.pageCount -
-                    paginationSettings.currentPage +
-                    1 >=
-                paginationSettings.buttonsNumber
-                    ? showPages(pages)
-                    : showLastPages(pages);
+                paginationSettings.currentPage = +page.textContent;
+            } else if (page.textContent == 'arrow_forward') {
+                paginationSettings.currentPage++;
+            } else {
+                paginationSettings.currentPage--;
             }
+            createPagination();
         });
     });
 }
 
-// function create_____Pagination() {
-//     for (let i = 0; i < paginationSettings.buttonsNumber; i++) {
-//         const button = document.createElement('button');
-//         button.classList.add('pagination__page');
-//         pagination.append(button);
-//     }
-//     const pages = document.querySelectorAll('.pagination__page');
-//     paginationSettings.pageCount - paginationSettings.currentPage + 1 >=
-//     paginationSettings.buttonsNumber
-//         ? showPages(pages)
-//         : showLastPages(pages);
+function calculateNumberOfCards() {
+    let firstOfRange =
+        (paginationSettings.currentPage - 1) * paginationSettings.cardsOnPage +
+        1;
+    let lastOfRange =
+        paginationSettings.currentPage * paginationSettings.cardsOnPage;
+    let total = paginationSettings.cardsOnPage * paginationSettings.pageCount;
+    if (total > 100) total = 100;
+    displayNumberOfCards(firstOfRange, lastOfRange, total);
+}
 
-//     // pages.forEach((page) => {
-//     // if (page.classList.contains('pagination__page_active'))
-//     //     page.classList.remove('pagination__page_active');
-//     listenPagination(pages);
-//     // });
-// }
-
-// function showPages(pages) {
-//     let currentPage = paginationSettings.currentPage;
-//     if (paginationSettings.pageCount -1 > currentPage > 3) {
-//     }
-// }
-
-// function showPages(pages) {
-//     let currentPage = paginationSettings.currentPage;
-//     const buttonsNumber = paginationSettings.buttonsNumber;
-//     pages[0].classList.add('pagination__page_active');
-//     for (let i = 0; i < buttonsNumber; i++) {
-//         i < buttonsNumber - 3
-//             ? (pages[i].textContent = currentPage)
-//             : i < buttonsNumber - 2
-//             ? (pages[i].textContent = '...')
-//             : i < buttonsNumber - 1
-//             ? (pages[i].textContent = paginationSettings.pageCount)
-//             : (pages[i].textContent = 'arrow_forward'),
-//             pages[i].classList.add('material-icons');
-//         currentPage++;
-//     }
-// }
-
-// function showLastPages(pages) {
-//     let currentPage =
-//         paginationSettings.pageCount - paginationSettings.buttonsNumber + 2;
-//     pages[0].classList.add('pagination__page_active');
-//     for (let i = 0; i < paginationSettings.buttonsNumber; i++) {
-//         i < buttonsNumber - 1
-//             ? (pages[i].textContent = currentPage)
-//             : (pages[i].textContent = 'arrow_forward'),
-//             pages[i].classList.add('material-icons');
-//         currentPage++;
-//     }
-// }
-
-// // console.log('listenPagination');
-// // page.addEventListener('click', (event) => {
-// //     if (page.textContent != '...' && page.textContent != 'arrow_forward') {
-// //         console.log('wbahf');
-// //     } else if (page.textContent === 'arrow_forward') {
-
-// //     }
-
-// // if (page.textContent != '...' && page.textContent != 'arrow_forward') {
-// //     console.log('first');
-
-// //     page.classList.add('pagination__page_active');
-// //     paginationSettings.currentPage = page.textContent;
-// //     paginationSettings.pageCount - paginationSettings.currentPage + 1 >=
-// //     paginationSettings.buttonsNumber
-// //         ? showPages(pages)
-// //         : showLastPages(pages);
-// // } else if (page.textContent === 'arrow_forward') {
-// //     paginationSettings.currentPage = [...pages.children].indexOf(
-// //         event.target
-// //     );
-// // }
-
-// // page.classList.add('.pagination__page_active');
-// // paginationSettings.currentPage = page
-// //     //[...pages.children].indexOf(            event.target
-// // );
-
-// // if (!rating.classList.contains('fixed')) {
-// //     setRating(rating, [...rating.children].indexOf(event.target));
-// // }
-// //     });
-// // }
-
-// function addContent() {
-//     // const button = document.createElement('button');
-//     // button.classList.add('pagination__page', className);
-//     // button.innerHTML = pageNumber;
-//     // pagination.append(button);
-// }
+function displayNumberOfCards(firstOfRange, lastOfRange, total) {
+    const paginationCounter = document.querySelector('.pagination__counter');
+    paginationCounter.textContent = `${firstOfRange} – ${lastOfRange} из ${total}+ вариантов аренды`;
+}
