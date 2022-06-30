@@ -1,9 +1,9 @@
 $.slider = require('jquery-ui/ui/widgets/slider');
 
-// var $grid = $(".our-design__gallery-items").isotope({
-//   itemSelector: ".our-design__gallery-item",
-//   transitionDuration: 500,
-// });
+$.extend($.slider.prototype.options.classes, {
+    'ui-slider-handle': 'slider__handle',
+    'ui-slider-range': 'slider__range',
+});
 
 $(function () {
     $('.slider__body').slider({
@@ -12,10 +12,12 @@ $(function () {
         max: 50000,
         values: [5000, 10000],
         slide: function (event, ui) {
-            $('.slider__range').val(ui.values[0] + '₽ - ' + ui.values[1] + '₽');
+            $('.slider__range-text').val(
+                ui.values[0] + '₽ - ' + ui.values[1] + '₽'
+            );
         },
     });
-    $('.slider__range').val(
+    $('.slider__range-text').val(
         $('.slider__body').slider('values', 0) +
             '₽ - ' +
             $('.slider__body').slider('values', 1) +
