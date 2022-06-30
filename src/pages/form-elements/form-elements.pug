@@ -71,7 +71,9 @@ mixin form-elements
                     .pagination-block__item 
                         +pagination
 
-        section.form-elements__dropdowns aaa
+        section.form-elements__dropdowns
+            +dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
+            +dropdown({values:['взрослые', 'дети', 'младенцы']})
         section.form-elements__lists bbb
         section.form-elements__review
             .form-elements__infographic cccc1
