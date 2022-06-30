@@ -1,13 +1,12 @@
-//@import '//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css';
 .slider {
     max-width: 266px;
 
-    .slider__top {
+    &__top {
         display: flex;
         justify-content: space-between;
     }
 
-    .slider__body {
+    &__body {
         margin-top: 20px;
         height: 6px;
         background: #fff;
@@ -15,7 +14,7 @@
         border: 1px solid $textColor_25;
         box-sizing: border-box;
 
-        > .ui-slider-range {
+        > .slider__range {
             height: 6px;
             box-sizing: content-box;
             top: -1px;
@@ -23,18 +22,22 @@
             background: $gradient_second;
         }
 
-        > .ui-slider-handle {
+        > .slider__handle {
             width: 12px;
             height: 12px;
             border-radius: 10px;
             background: $gradient_second; //gradient_second
             border: 2px solid white;
             top: -0.35em;
+
+            &:focus {
+                outline: 1px solid #6fcf97;
+            }
         }
     }
 }
 
-.slider__range {
+.slider__range-text {
     max-width: 126px;
     border: none;
     text-align: right;
