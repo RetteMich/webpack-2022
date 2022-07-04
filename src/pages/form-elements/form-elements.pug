@@ -74,9 +74,21 @@ mixin form-elements
         section.form-elements__dropdowns
             +dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
             +dropdown({values:['взрослые', 'дети', 'младенцы']})
-        section.form-elements__lists bbb
+        section.form-elements__lists
+            .form-elements__expandable-lists
+                .form-elements__expandable-list-wrapper
+                    // +checkbox
+                .form-elements__expandable-list
+            .form-elements__rich-bullet-lists
+                .form-elements__list-wrapper
+                    //+rich-list; +checkbox
+                .form-elements__list-wrapper
+                    //+bullet-list
+
         section.form-elements__review
-            .form-elements__infographic cccc1
+            .form-elements__infographics
+                +infographic
+
             .form-elements__comment cccc2
 
 
