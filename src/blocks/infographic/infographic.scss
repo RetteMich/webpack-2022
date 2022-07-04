@@ -1,0 +1,27 @@
+.infographic {
+    display: flex;
+    max-width: 291px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    padding: 20px 0 20px 0;
+    align-content: space-between;
+}
+
+.infographic__icon {
+    // width: 48px;
+    // height: 48px;
+    font-size: 48px;
+    background-image: $gradient_first;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+}
+.infographic__text {
+    @include font_body;
+    margin-left: 10px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+}
+.infographic__title {
+    font-weight: 700;
+}
