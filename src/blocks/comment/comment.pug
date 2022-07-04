@@ -1,0 +1,20 @@
+mixin comment(options = {})
+    -
+        const {
+            photo="",
+            name="",
+            commentText="",
+            publicationDate="",
+            likesNumber=0,
+            likePressed=false
+        } = options
+    .comment
+        .comment__person 
+            img.comment__person-photo(src=require(`/assets/images/${photo}`))
+            .comment__person-wrapper
+                .comment__person-name=name
+                .comment__publication-date=publicationDate
+        .comment__body
+            .comment__like
+                +like({value: likesNumber, isPressed: likePressed})
+            p.comment__text=commentText

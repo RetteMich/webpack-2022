@@ -89,7 +89,13 @@ mixin form-elements
             .form-elements__infographics
                 +infographic({icon: 'insert_emoticon', title:'Комфорт', subtitle:'Шумопоглощающие стены'})
                 +infographic({icon: 'location_city', title:'Удобство', subtitle:'Окно в каждой из спален'})
-
-            .form-elements__comment cccc2
+            .form-elements__comment
+                +comment({
+                    name: 'Мурад Сарафанов',
+                    photo:'murad-sarafanov.png',
+                    publicationDate: '5 дней назад', 
+                    commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                    likePressed: true, 
+                    likesNumber: 12})
 
 
