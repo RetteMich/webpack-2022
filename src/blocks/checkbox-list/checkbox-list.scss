@@ -1,33 +1,29 @@
-.multiselect {
-    width: 200px;
-}
+.checkbox-list {
+    width: 266px;
+    border: none;
 
-.selectBox {
-    position: relative;
-}
-
-.selectBox select {
-    width: 100%;
-    font-weight: bold;
-}
-
-.overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.checkboxes {
-    display: none;
-    border: 1px #dadada solid;
-}
-
-.checkboxes label {
-    display: block;
-}
-
-.checkboxes label:hover {
-    background-color: #1e90ff;
+    &__menu {
+        display: flex;
+        @include font_h3;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__header {
+        margin: 0;
+    }
+    &__arrow {
+        margin-right: 10px;
+    }
+    &__body {
+        display: none;
+        border: none;
+        margin-top: 13px;
+    }
+    &__item {
+        margin-bottom: 10px;
+        &:hover {
+            //box-shadow: 0 0 10px rgba(188, 156, 255, 0.3);
+            border-radius: 5px;
+        }
+    }
 }

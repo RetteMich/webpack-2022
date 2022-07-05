@@ -1,51 +1,35 @@
-mixin checkbox-list
-    form
-        .multiselect
-            .selectBox
-                select
-                    option Select an option
-                .overSelect
-            .checkboxes
-                label(for='one')
-                    input#one(type='checkbox')
-                    | First checkbox
-                label(for='two')
-                    input#two(type='checkbox')
-                    | Second checkbox
-                label(for='three')
-                    input#three(type='checkbox')
-                    | Third checkbox
+mixin checkbox-list(options=[])
+    -
+        const {type="", 
+            header="",
+            items,
+            // classic, dropdown, rich
+        } = options
 
 
-
-//- form
-//-     .multiselect
-//-         .selectBox(onclick='showCheckboxes()')
-//-         select
-//-             option Select an option
-//-         .overSelect
-//-     #checkboxes
-//-         label(for='one')='Second checkbox'
-//-             input#one(type='checkbox')
-//-             | First checkbox
-//-         label(for='two')='Second checkbox'
-//-             input#two(type='checkbox')
-//-             | Second checkbox
-//-         label(for='three')='Second checkbox'
-//-             input#three(type='checkbox')
-//-             | Third checkbox
-
-
-//- form
-//-     .multiselect
-//-         .selectBox(onclick=showCheckboxes())
-//-             select
-//-                 option Select an option
-//-             .overSelect
-//-         div#checkboxes
-//-             label(for="one")
-//-                 input(type="checkbox" id='one')
-//-             label(for="two")
-//-                 input(type="checkbox" id='two')
-//-             label(for="three")
-//-                 input(type="checkbox" id='three')
+    if (type=='dropdown')
+        .checkbox-list
+            .checkbox-list__menu
+                span.checkbox-list__header=header
+                .checkbox-list__arrow.material-icons expand_more
+            .checkbox-list__body
+                each item in items 
+                    .checkbox-list__item
+                        +checkbox(item)
+    else if(type=='rich')
+        .checkbox-list
+            span.checkbox-list__header=header
+            .checkbox-list__body
+                each item in items 
+                    .checkbox-list__item
+                        +checkbox(item)
+    else
+        .d
+    //- .checkbox-list
+    //-     .checkbox-list__menu
+    //-         span.checkbox-list__header Expandable checkbox list
+    //-         .checkbox-list__arrow.material-icons expand_more
+    //-     .checkbox-list__body
+    //-         each item in options.items 
+    //-             .checkbox-list__item
+    //-                 +checkbox(item)
