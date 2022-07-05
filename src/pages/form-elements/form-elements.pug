@@ -19,11 +19,11 @@ mixin form-elements
                 .checkbox-list
                     label.checkbox-list__header Checkbox Buttons
                     .checkbox-list__item
-                        +checkbox({text:"Можно курить", isDisabled:true})
+                        +checkbox({title:"Можно курить"})
                     .checkbox-list__item
-                        +checkbox({text:"Можно с питомцами"})
+                        +checkbox({title:"Можно с питомцами", isActive:true})
                     .checkbox-list__item
-                        +checkbox({text:"Можно пригласить гостей (до 10 человек)"})
+                        +checkbox({title:"Можно пригласить гостей (до 10 человек)", isActive:true})
                 .radio-list
                     label.radio-list__header Radio Buttons
                     .radio-list__items
@@ -78,11 +78,28 @@ mixin form-elements
             .form-elements__expandable-lists
                 .form-elements__expandable-list-wrapper
                     // +checkbox
-                    +checkbox-list
+                    +checkbox-list({items: [{title:"Завтрак"},
+                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
+                    {title:"Стул для кормления",  isActive:true},
+                    {title:"Кроватка"},
+                    {title:"Телевизор"},
+                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
+
+                    +checkbox-list({items: [{title:"Завтрак"},
+                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
+                    {title:"Стул для кормления",  isActive:true},
+                    {title:"Кроватка"},
+                    {title:"Телевизор"},
+                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
                 .form-elements__expandable-list
             .form-elements__rich-bullet-lists
                 .form-elements__list-wrapper
-                    //+rich-list; +checkbox
+                    +checkbox-list({items: [{title:"Завтрак"},
+                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
+                    {title:"Стул для кормления",  isActive:true},
+                    {title:"Кроватка"},
+                    {title:"Телевизор"},
+                    {title:"Шампунь"}], header: "rich", type: "rich"})
                 .form-elements__list-wrapper
                     //+bullet-list
 
