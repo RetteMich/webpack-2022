@@ -1,6 +1,15 @@
-mixin checkbox(options)
+mixin checkbox(options = {})
+    -
+        const {
+            title="",
+            subtitle="",
+            isActive=false,
+        } = options
+
+
     .checkbox
         label.checkbox__label
-            input.checkbox__input(type="checkbox" disabled=options.isDisabled tabindex="-1")
+            input.checkbox__input(type="checkbox" checked=options.isActive tabindex="-1")
             span.checkbox__box(tabindex="0")
-            =options.text
+            =title
+            label.checkbox__subtitle=subtitle

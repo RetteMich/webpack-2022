@@ -3,17 +3,15 @@
 
     &:checked + .checkbox__box {
         background: url(./assets/images/check-mark.svg) center no-repeat;
-    }
-
-    &:disabled + .checkbox__box {
-        border: 1px solid $textColor_25;
-        color: $textColor_50;
+        border: 1px solid $designColor_first;
     }
 }
 
 .checkbox__box {
     border-radius: 4px;
-    border: 1px solid $designColor_first;
+
+    border: 1px solid $textColor_25;
+    color: $textColor_50;
     width: 1.3em;
     height: 1.3em;
     background-color: transparent;
@@ -21,14 +19,14 @@
     flex-shrink: 0;
 
     &:focus {
-        outline: red solid 2px;
-        box-shadow: 2px right $designColor_second;
+        outline: 1px solid $designColor_first;
+        box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
     }
 
     &:hover {
-        outline: red solid 2px;
-        border: 1px solid $designColor_second;
-        border-color: $designColor_second;
+        //outline: 1px solid $designColor_first;
+        border: 1px solid $designColor_first;
+        box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
     }
 }
 
