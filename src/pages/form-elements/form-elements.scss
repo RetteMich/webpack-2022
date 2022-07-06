@@ -1,17 +1,14 @@
-.form-elements__wrapper {
-    margin: 62px 141px 140px;
+.form-elements {
+    margin: 65px 141px 140px;
     display: grid;
     grid-template-rows: 636px 265px 281px 158px;
-    row-gap: 100px;
-}
+    grid-template-columns: 374px 320px 320px;
+    //row-gap: 100px;
+    column-gap: 72px;
 
-.form-elements__fields-buttons {
-    display: grid;
-    margin-top: 3px;
-    //border: 1px solid black;
-    grid-template-columns: 320px auto 320px;
-    column-gap: 126px;
-    grid-auto-columns: minmax(320px, auto);
+    &__fields-item {
+        margin-bottom: 20px;
+    }
 }
 
 .form-elements__slider-buttons-pagination {
@@ -23,11 +20,10 @@
     margin: 30px 0 0 79px;
 }
 .form-elements__review {
-    display: grid;
+    //display: grid;
 }
 
 .form-elements__fields {
-    height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -77,4 +73,9 @@
     margin-top: 20px;
     margin-bottom: 16px;
     width: 100%;
+}
+
+.form-elements__lists {
+    // display: grid;
+    // grid-template-columns: 320px 320px 320px;
 }

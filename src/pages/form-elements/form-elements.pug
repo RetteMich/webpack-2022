@@ -1,119 +1,119 @@
 mixin form-elements
     header.ui-kit-header
         +ui-kit-header
-    .form-elements__wrapper
-        section.form-elements__fields-buttons
-            .form-elements__fields-calendars
-                .form-elements__fields
-                    +field({header: "Text field", description: "Default", mask: "Email"})
-                    +field({header:"Text field", description: "Hover / Focus", mask: "This is pretty awesome"})
-                    +field({header:"Dropdown", mask: "Сколько гостей"})
-                    +field({header:"masked text field", mask: "ДД.ММ.ГГГГ"})
-                .form-elements__calendars
-                    +field({header: "date Dropdown", description: "Default", mask: "Email"})
-                    +field({header:"filter date dropdown", description: "Hover / Focus", mask: "This is pretty awesome"})
-                    +field({header:"subscription text field", mask: "Email", isSubscription: true, subscriptionText:"Получайте специальные предложения и новости сервиса"})
-                //- +field({header:"subscription text field", isSubscription: true})
+    .form-elements 
+        .form-elements__column
+            .form-elements__fields-item
+                +field({header: "Text field", description: "Default", mask: "Email"})
+            .form-elements__fields-item
+                +field({header:"Text field", description: "Hover / Focus", mask: "This is pretty awesome"})
+            .form-elements__fields-item
+                +field({header:"Dropdown", mask: "Сколько гостей"})
 
-            .form-elements__function-buttons
-                .checkbox-list
-                    label.checkbox-list__header Checkbox Buttons
-                    .checkbox-list__item
-                        +checkbox({title:"Можно курить"})
-                    .checkbox-list__item
-                        +checkbox({title:"Можно с питомцами", isActive:true})
-                    .checkbox-list__item
-                        +checkbox({title:"Можно пригласить гостей (до 10 человек)", isActive:true})
-                .radio-list
-                    label.radio-list__header Radio Buttons
-                    .radio-list__items
-                        +radio-button({text:"Мужчина", isChecked:true, name:"gender"})
-                        +radio-button({text:"Женщина", name:"gender"})
-                .toggle-list
-                    label.toggle-list__header Toggle
-                    .toggle-list__items
-                        +toggle({text:"Получать спецпредложения", isOn:true})
-                        +toggle({text:"Получать спецпредложения"})
-                .like-buttons
-                    label.like-buttons__header like button
-                    .like-buttons__item 
-                        +like({value: 2, isPressed:true})
-                    .like-buttons__item 
-                        +like({value: 12})
-                .rate-buttons 
-                    label.rate-buttons__header rate button
-                    .rate-buttons__item 
-                        +rating
-                    .rate-buttons__item 
-                        +rating
-            .form-elements__slider-buttons-pagination
-                .range-slider
-                    //+slider({header: "range slider", range: {min: 1000, max: 3000}})
-                    +slider
-                .buttons
-                    label.buttons__header buttons
-                    .buttons__item
-                        +button({text:'click me',view: 'filled'})
-                    .buttons__item
-                        +button({text:'click me',view: 'filled', isDisabled: true})
-                    .buttons__item
-                        +button({text:"click me", view: 'hasBorder'})
-                    .buttons__item
-                        +button({text:"click me", view: 'hasBorder', isDisabled: true})
-                    .buttons__item
-                        +button({text:"click me", view: 'empty'})
-                    .buttons__item
-                        +button({text:"click me", view: 'empty', isDisabled: true})
-                    .buttons__item
-                        +button({text:"перейти к оплате", view: 'filled', hasArrow: true})
-                .pagination-block
-                    label.pagination-block__header pagination
-                    .pagination-block__item 
-                        +pagination
+            .form-elements__fields-item
+                +field({header:"masked text field", mask: "ДД.ММ.ГГГГ"})
+            .form-elements__calendars
+                +field({header: "date Dropdown", description: "Default", mask: "Email"})
+                +field({header:"filter date dropdown", description: "Hover / Focus", mask: "This is pretty awesome"})
+                +field({header:"subscription text field", mask: "Email", isSubscription: true, subscriptionText:"Получайте специальные предложения и новости сервиса"})
+            //- +field({header:"subscription text field", isSubscription: true})
 
-        section.form-elements__dropdowns
-            //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
-            //+dropdown({values:['взрослые', 'дети', 'младенцы']})
-        section.form-elements__lists
-            .form-elements__expandable-lists
-                .form-elements__expandable-list-wrapper
-                    // +checkbox
-                    +checkbox-list({items: [{title:"Завтрак"},
-                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
-                    {title:"Стул для кормления",  isActive:true},
-                    {title:"Кроватка"},
-                    {title:"Телевизор"},
-                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
+        .form-elements__column
+            .form-elements__checkbox-list
+                label.checkbox-list__header Checkbox Buttons
+                .checkbox-list__item
+                    +checkbox({title:"Можно курить"})
+                .checkbox-list__item
+                    +checkbox({title:"Можно с питомцами", isActive:true})
+                .checkbox-list__item
+                    +checkbox({title:"Можно пригласить гостей (до 10 человек)", isActive:true})
+            .radio-list
+                label.radio-list__header Radio Buttons
+                .radio-list__items
+                    +radio-button({text:"Мужчина", isChecked:true, name:"gender"})
+                    +radio-button({text:"Женщина", name:"gender"})
+            .toggle-list
+                label.toggle-list__header Toggle
+                .toggle-list__items
+                    +toggle({text:"Получать спецпредложения", isOn:true})
+                    +toggle({text:"Получать спецпредложения"})
+            .like-buttons
+                label.like-buttons__header like button
+                .like-buttons__item 
+                    +like({value: 2, isPressed:true})
+                .like-buttons__item 
+                    +like({value: 12})
+            .rate-buttons 
+                label.rate-buttons__header rate button
+                .rate-buttons__item 
+                    +rating
+                .rate-buttons__item 
+                    +rating
+        .form-elements__slider-buttons-pagination
+            .range-slider
+                //+slider({header: "range slider", range: {min: 1000, max: 3000}})
+                +slider
+            .buttons
+                label.buttons__header buttons
+                .buttons__item
+                    +button({text:'click me',view: 'filled'})
+                .buttons__item
+                    +button({text:'click me',view: 'filled', isDisabled: true})
+                .buttons__item
+                    +button({text:"click me", view: 'hasBorder'})
+                .buttons__item
+                    +button({text:"click me", view: 'hasBorder', isDisabled: true})
+                .buttons__item
+                    +button({text:"click me", view: 'empty'})
+                .buttons__item
+                    +button({text:"click me", view: 'empty', isDisabled: true})
+                .buttons__item
+                    +button({text:"перейти к оплате", view: 'filled', hasArrow: true})
+            .pagination-block
+                label.pagination-block__header pagination
+                .pagination-block__item 
+                    +pagination
 
-                    +checkbox-list({items: [{title:"Завтрак"},
-                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
-                    {title:"Стул для кормления",  isActive:true},
-                    {title:"Кроватка"},
-                    {title:"Телевизор"},
-                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
-                .form-elements__expandable-list
-            .form-elements__rich-bullet-lists
-                .form-elements__list-wrapper
-                    +checkbox-list({items: [{title:"Завтрак"},
-                    {title:"Письменный стол", subtitle:'ssssss', isActive:true},
-                    {title:"Стул для кормления",  isActive:true},
-                    {title:"Кроватка"},
-                    {title:"Телевизор"},
-                    {title:"Шампунь"}], header: "rich", type: "rich"})
-                .form-elements__list-wrapper
-                    //+bullet-list
+        //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
+        //+dropdown({values:['взрослые', 'дети', 'младенцы']})
 
-        section.form-elements__review
-            .form-elements__infographics
-                +infographic({icon: 'insert_emoticon', title:'Комфорт', subtitle:'Шумопоглощающие стены'})
-                +infographic({icon: 'location_city', title:'Удобство', subtitle:'Окно в каждой из спален'})
-            .form-elements__comment
-                +comment({
-                    name: 'Мурад Сарафанов',
-                    photo:'murad-sarafanov.png',
-                    publicationDate: '5 дней назад', 
-                    commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-                    likePressed: true, 
-                    likesNumber: 12})
+        .form-elements__expandable-lists
+            .form-elements__expandable-list-wrapper
+                // +checkbox
+                +checkbox-list({items: [{title:"Завтрак"},
+                {title:"Письменный стол", isActive:true},
+                {title:"Стул для кормления",  isActive:true},
+                {title:"Кроватка"},
+                {title:"Телевизор"},
+                {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
+
+                +checkbox-list({items: [{title:"Завтрак"},
+                {title:"Письменный стол", isActive:true},
+                {title:"Стул для кормления",  isActive:true},
+                {title:"Кроватка"},
+                {title:"Телевизор"},
+                {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
+            .form-elements__expandable-list
+        .form-elements__rich-bullet-lists
+            .form-elements__list-wrapper
+                +checkbox-list({items: [{title:"Широкий коридор", subtitle:'Ширина коридоров в номере не менее 91 см.',},
+                {title:"Помощник для инвалидов", subtitle:'На 1 этаже вас встретит специалист и проводит до номера.'}],
+                    header: "rich", type: "rich"})
+        .form-elements__rich-bullet-lists
+            .bullet-list 
+                h6.bullet-list__header bullet list
+                +bullet-list({items:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
+
+        .form-elements__infographics
+            +infographic({icon: 'insert_emoticon', title:'Комфорт', subtitle:'Шумопоглощающие стены'})
+            +infographic({icon: 'location_city', title:'Удобство', subtitle:'Окно в каждой из спален'})
+        .form-elements__comment
+            +comment({
+                name: 'Мурад Сарафанов',
+                photo:'murad-sarafanov.png',
+                publicationDate: '5 дней назад', 
+                commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                likePressed: true, 
+                likesNumber: 12})
 
 
