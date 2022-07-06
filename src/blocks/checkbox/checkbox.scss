@@ -17,17 +17,6 @@
     background-color: transparent;
     margin-right: 0.7em;
     flex-shrink: 0;
-
-    &:focus {
-        outline: 1px solid $designColor_first;
-        box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
-    }
-
-    &:hover {
-        //outline: 1px solid $designColor_first;
-        border: 1px solid $designColor_first;
-        box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
-    }
 }
 
 .checkbox__label {
@@ -35,6 +24,40 @@
     display: flex; //или инлайн флекс??
     line-height: 18px;
     color: $textColor_50;
-    max-width: 222px;
+    //max-width: 222px;
     cursor: pointer;
+
+    &:hover {
+        .checkbox__box {
+            //outline: 1px solid $designColor_first;
+            border: 1px solid $designColor_first;
+            box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
+        }
+    }
+    &:focus {
+        .checkbox__box {
+            outline: 1px solid $designColor_first;
+            box-shadow: 0 0 10px rgba(188, 156, 255, 0.9);
+        }
+    }
+}
+
+.checkbox__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox__title_rich {
+    font-weight: 700;
+    display: block;
+    color: $textColor_75;
+}
+
+.checkbox__subtitle {
+    @include font_h3;
+    font-weight: 400;
+    color: $textColor_50;
+    display: none;
+    margin-top: 5px;
+    text-transform: none;
 }
