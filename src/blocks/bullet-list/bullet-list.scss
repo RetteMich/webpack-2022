@@ -1,0 +1,26 @@
+.bullet-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    max-width: 260px;
+    &__item {
+        @include font-body;
+        display: flex;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            margin: 7px 10px 0 0;
+            border-radius: 5px;
+            background: $textColor_25;
+            flex-shrink: 0;
+        }
+    }
+}

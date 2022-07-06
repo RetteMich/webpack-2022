@@ -1,0 +1,9 @@
+mixin bullet-list(options=[])
+    -
+        const {
+            items='',
+        } = options
+
+    ul.bullet-list
+        each item in items
+            li.bullet-list__item= item
