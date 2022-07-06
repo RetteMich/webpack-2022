@@ -1,27 +1,65 @@
-const checkboxLists = document.querySelectorAll('.checkbox-list');
-const checkboxes = document.querySelectorAll('.checkbox-list__body');
+const checkboxListsRich = document.querySelectorAll('.js-checkbox-list-rich');
 
-checkboxes.forEach((checkbox) => (checkbox.style.display = 'none'));
+initializeDropdownCheckboxList();
+initializeRichCheckboxList();
 
-checkboxLists.forEach((checkboxList) => {
-    const menus = checkboxList.querySelectorAll('.checkbox-list__menu');
-
-    menus.forEach((menu) => {
-        menu.addEventListener('click', () => {
-            const checkboxes = checkboxList.querySelectorAll(
-                '.checkbox-list__body'
-            );
-
-            const arrow = menu.querySelector('.checkbox-list__arrow');
-            checkboxes.forEach((checkbox) => {
-                if (checkbox.style.display === 'none') {
-                    checkbox.style.display = 'block';
-                    arrow.textContent = 'expand_less';
-                } else {
-                    checkbox.style.display = 'none';
-                    arrow.textContent = 'expand_more';
-                }
-            });
+function initializeDropdownCheckboxList() {
+    hideDropdownCheckboxList();
+    const dropdownCheckboxLists = document.querySelectorAll(
+        '.js-checkbox-list-dropdown'
+    );
+    dropdownCheckboxLists.forEach((dropdownCheckboxList) => {
+        const dropdownMenus = dropdownCheckboxList.querySelectorAll(
+            '.js-checkbox-list__menu'
+        );
+        dropdownMenus.forEach((dropdownMenu) => {
+            dropdownCheckboxListClick(dropdownCheckboxList, dropdownMenu);
         });
     });
-});
+}
+
+function initializeRichCheckboxList() {
+    const richCheckboxLists = document.querySelectorAll(
+        '.js-checkbox-list-rich'
+    );
+    richCheckboxLists.forEach((richCheckboxList) => {
+        const richCheckboxTitles =
+            richCheckboxList.querySelectorAll('.checkbox__title');
+        const richCheckboxSubitles = richCheckboxList.querySelectorAll(
+            '.checkbox__subtitle'
+        );
+
+        richCheckboxTitles.forEach((richCheckboxTitle) =>
+            richCheckboxTitle.classList.add('checkbox__title_rich')
+        );
+        richCheckboxSubitles.forEach(
+            (richCheckboxSubitle) =>
+                (richCheckboxSubitle.style.display = ' inline')
+        );
+    });
+}
+
+function hideDropdownCheckboxList() {
+    const checkboxLists = document.querySelectorAll('.js-checkbox-list__body');
+    checkboxLists.forEach(
+        (checkboxList) => (checkboxList.style.display = 'none')
+    );
+}
+
+function dropdownCheckboxListClick(dropdownCheckboxList, dropdownMenu) {
+    dropdownMenu.addEventListener('click', () => {
+        const checkboxLists = dropdownCheckboxList.querySelectorAll(
+            '.checkbox-list__body'
+        );
+        const arrow = dropdownMenu.querySelector('.js-checkbox-list__arrow');
+        checkboxLists.forEach((checkboxList) => {
+            if (checkboxList.style.display === 'none') {
+                checkboxList.style.display = 'block';
+                arrow.textContent = 'expand_less';
+            } else {
+                checkboxList.style.display = 'none';
+                arrow.textContent = 'expand_more';
+            }
+        });
+    });
+}
