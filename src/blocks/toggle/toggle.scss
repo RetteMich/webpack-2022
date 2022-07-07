@@ -1,39 +1,44 @@
-.toggle__input {
-    @include visuallyhidden;
-}
+.toggle {
+    &__label {
+        display: flex;
+        @include font_body;
+        align-items: center;
+    }
 
-.toggle__box {
-    cursor: pointer;
-    width: 40px;
-    height: 20px;
-    display: block;
-    border-radius: 10px;
-    position: relative;
-    border: 1px solid $textColor_25;
-    box-sizing: border-box;
-}
+    &__input {
+        @include visuallyhidden;
 
-.toggle__box::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-    background-color: $textColor_25;
-    border-radius: 100%;
-    transition: 0.3s;
-}
+        &:checked + .toggle__box {
+            border: 1px solid $designColor_first;
+            &:after {
+                left: calc(100% - 3px);
+                transform: translateX(-100%);
+                background: none;
+                background: url(./assets/images/radio.svg) center no-repeat;
+            }
+        }
+    }
+    &__box {
+        cursor: pointer;
+        width: 40px;
+        height: 20px;
+        display: block;
+        border-radius: 10px;
+        position: relative;
+        border: 1px solid $textColor_25;
+        box-sizing: border-box;
+        margin-right: 0.625rem;
 
-.toggle__input:checked+.toggle__box {
-    border: 1px solid $designColor_first;
-
-}
-
-.toggle__input:checked+.toggle__box:after {
-    left: calc(100% - 3px);
-    transform: translateX(-100%);
-    background: none;
-    background: url(./assets/images/radio.svg) center no-repeat;
-
+        &::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 12px;
+            height: 12px;
+            background-color: $textColor_25;
+            border-radius: 100%;
+            transition: 0.3s;
+        }
+    }
 }
