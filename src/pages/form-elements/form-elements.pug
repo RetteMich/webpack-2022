@@ -19,7 +19,6 @@ mixin form-elements
             //- +field({header:"subscription text field", isSubscription: true})
 
         .form-elements__column
-
             .form-elements__checkbox-list
                 h3.form-elements__checkbox-list-header Checkbox Buttons
                 .form-elements__checkbox-list-item
@@ -49,13 +48,12 @@ mixin form-elements
                     +like({value: 12, isPressed:true})
 
             .form-elements__rate-buttons 
-                label.rate-buttons__header rate button
-                .rate-buttons__item 
+                h3.form-elements__rate-buttons-header rate button
+                .form-elements__rate-buttons-items
                     +rating
-                .rate-buttons__item 
                     +rating
-        .form-elements__slider-buttons-pagination
-            .range-slider
+        .form-elements__column
+            .form-elements__range-slider
                 //+slider({header: "range slider", range: {min: 1000, max: 3000}})
                 +slider
             .buttons
