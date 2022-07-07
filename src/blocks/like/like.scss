@@ -1,36 +1,38 @@
 .like {
+    @include font-body;
+
     border: 1px solid $textColor_25;
+    background-color: #fff;
     border-radius: 10px;
     box-sizing: border-box;
     width: 40px;
     height: 20px;
     display: flex;
-    justify-content: start;
+    padding: 0;
     align-items: center;
     cursor: pointer;
+    color: $textColor_25;
 
-    .like__icon {
-        margin: 0px 6px 0px 4px;
+    &__icon {
+        margin: 0 0.33rem 0 0.25rem;
+        font-size: 0.625rem;
+    }
+    &__counter {
+        font-size: 0.625rem;
     }
 
-    .like__icon,
-    .like__counter {
-        color: $textColor_25;
-        font-size: 0.65rem;
-    }
-}
+    &_pressed {
+        border: 1px solid $designColor_first;
 
-.like_pressed {
-    border: 1px solid $designColor_first;
+        .like__icon {
+            background-image: $gradient_first;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-clip: text;
+        }
 
-    .like__icon {
-        background-image: $gradient_first;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-clip: text;
-    }
-
-    .like__counter {
-        color: $designColor_first;
+        .like__counter {
+            color: $designColor_first;
+        }
     }
 }
