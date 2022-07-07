@@ -37,15 +37,15 @@ mixin form-elements
 
             .form-elements__toggle-list
                 h3.form-elements__toggle-list-header Toggle
-                .form-elements__toggle-list-items
+                .form-elements__toggle-list-item
                     +toggle({text:"Получать спецпредложения", isOn:true})
+                .form-elements__toggle-list-item
                     +toggle({text:"Получать спецпредложения"})
 
             .form-elements__like-buttons
-                h3.like-buttons__header like button
-                .like-buttons__item 
+                h3.form-elements__like-buttons-header like button
+                .form-elements__like-buttons-items
                     +like({value: 2, isPressed:true})
-                .like-buttons__item 
                     +like({value: 12})
 
             .form-elements__rate-buttons 
