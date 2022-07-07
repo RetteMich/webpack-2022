@@ -1,6 +1,11 @@
 mixin toggle(options)
+    -
+        const {
+            text='',
+            isOn=false
+        }= options
     .toggle
         label.toggle__label
-            input.toggle__input(type="checkbox")
+            input.toggle__input(type="checkbox" checked=isOn)
             span.toggle__box
-            | ToggleToggle
+            =text
