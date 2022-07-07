@@ -1,9 +1,28 @@
 .slider {
-    max-width: 266px;
+    max-width: 16.625rem;
+    margin-top: 0.0625rem;
 
     &__top {
         display: flex;
         justify-content: space-between;
+    }
+
+    &__header {
+        @include font_h3;
+        margin: 0;
+    }
+
+    &__range-text {
+        max-width: 8.125rem;
+        border: none;
+        text-align: right;
+        background-color: #fff;
+        @include font_h3;
+        font-weight: 400;
+        color: $textColor_50;
+        &:read-only {
+            outline: none;
+        }
     }
 
     &__body {
@@ -34,17 +53,5 @@
                 outline: 1px solid #6fcf97;
             }
         }
-    }
-}
-
-.slider__range-text {
-    max-width: 126px;
-    border: none;
-    text-align: right;
-    background-color: #fff;
-    @include font_body;
-    color: $textColor_50;
-    &:read-only {
-        outline: none;
     }
 }
