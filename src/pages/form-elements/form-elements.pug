@@ -19,31 +19,36 @@ mixin form-elements
             //- +field({header:"subscription text field", isSubscription: true})
 
         .form-elements__column
+
             .form-elements__checkbox-list
-                label.checkbox-list__header Checkbox Buttons
-                .checkbox-list__item
+                h3.form-elements__checkbox-list-header Checkbox Buttons
+                .form-elements__checkbox-list-item
                     +checkbox({title:"Можно курить"})
-                .checkbox-list__item
+                .form-elements__checkbox-list-item
                     +checkbox({title:"Можно с питомцами", isActive:true})
-                .checkbox-list__item
+                .form-elements__checkbox-list-item
                     +checkbox({title:"Можно пригласить гостей (до 10 человек)", isActive:true})
-            .radio-list
-                label.radio-list__header Radio Buttons
-                .radio-list__items
+
+            .form-elements__radio-list
+                h3.form-elements__radio-list-header Radio Buttons
+                .form-elements__radio-list-items
                     +radio-button({text:"Мужчина", isChecked:true, name:"gender"})
                     +radio-button({text:"Женщина", name:"gender"})
-            .toggle-list
-                label.toggle-list__header Toggle
-                .toggle-list__items
+
+            .form-elements__toggle-list
+                h3.form-elements__toggle-list-header Toggle
+                .form-elements__toggle-list-items
                     +toggle({text:"Получать спецпредложения", isOn:true})
                     +toggle({text:"Получать спецпредложения"})
-            .like-buttons
-                label.like-buttons__header like button
+
+            .form-elements__like-buttons
+                h3.like-buttons__header like button
                 .like-buttons__item 
                     +like({value: 2, isPressed:true})
                 .like-buttons__item 
                     +like({value: 12})
-            .rate-buttons 
+
+            .form-elements__rate-buttons 
                 label.rate-buttons__header rate button
                 .rate-buttons__item 
                     +rating
