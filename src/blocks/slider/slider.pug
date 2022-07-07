@@ -1,16 +1,7 @@
-mixin slider
+mixin slider(header)
     //link(rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css")
     .slider
         .slider__top
-            label.slider__header(for="amount") Range Slider
-            input.slider__range-text(type="text" readonly)
-        .slider__body
-
-
-
-//- mixin slider()
-//-     .slider
-//-         .slider__header
-//-             label.slider__header
-//-             label.slider__range
-//-         .slider__body
+            h3.slider__header(for="amount")=header
+            input.slider__range-text.js-slider__range-text(type="text" readonly)
+        .slider__body.js-slider__body
