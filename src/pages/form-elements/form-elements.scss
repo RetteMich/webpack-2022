@@ -8,7 +8,6 @@
 
     &__checkbox-list-header,
     &__like-buttons-header,
-    &__toggle-list-header,
     &__buttons-header,
     &__pagination-block-header,
     &__rate-buttons-header {
@@ -39,6 +38,22 @@
         }
     }
     &__toggle-list {
+        margin-bottom: 2.7rem;
+        &-header {
+            margin-bottom: 0.8125rem;
+            @include font_h3;
+        }
+        &-item:not(:last-child) {
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    &__like-buttons {
+        &-items {
+            display: flex;
+            justify-content: space-between;
+            width: 5.625rem;
+        }
     }
 }
 
