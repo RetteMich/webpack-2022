@@ -9,18 +9,18 @@ $(function () {
     $('.slider__body').slider({
         range: true,
         min: 0,
-        max: 50000,
+        max: 15650,
         values: [5000, 10000],
         slide: function (event, ui) {
-            $('.slider__range-text').val(
+            $('.js-slider__range-text').val(
                 ui.values[0] + '₽ - ' + ui.values[1] + '₽'
             );
         },
     });
-    $('.slider__range-text').val(
-        $('.slider__body').slider('values', 0) +
+    $('.js-slider__range-text').val(
+        $('.js-slider__body').slider('values', 0).toLocaleString() +
             '₽ - ' +
-            $('.slider__body').slider('values', 1) +
+            $('.js-slider__body').slider('values', 1).toLocaleString() +
             '₽'
     );
 });
