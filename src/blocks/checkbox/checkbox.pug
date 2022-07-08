@@ -11,5 +11,6 @@ mixin checkbox(options = {})
         label.checkbox__label
             input.checkbox__input(type="checkbox" checked=options.isActive tabindex="-1")
             span.checkbox__box(tabindex="0")
-            =title
-            label.checkbox__subtitle=subtitle
+            .checkbox__wrapper
+                span.checkbox__title=title
+                span.checkbox__subtitle=subtitle
