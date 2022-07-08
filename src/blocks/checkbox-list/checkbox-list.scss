@@ -9,8 +9,8 @@
         align-items: center;
     }
     &__header {
-        //margin: 0;
         @include font_h3;
+        margin: 0;
     }
     &__arrow {
         margin-right: 10px;
