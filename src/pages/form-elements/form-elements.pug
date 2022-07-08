@@ -55,21 +55,21 @@ mixin form-elements
         .form-elements__column
             .form-elements__range-slider
                 +slider('range slider')
-            .buttons
-                label.buttons__header buttons
-                .buttons__item
+            .form-elements__buttons
+                h3.form-elements__buttons-header buttons
+                .form-elements__buttons-item
                     +button({text:'click me',view: 'filled'})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:'click me',view: 'filled', isDisabled: true})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:"click me", view: 'hasBorder'})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:"click me", view: 'hasBorder', isDisabled: true})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:"click me", view: 'empty'})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:"click me", view: 'empty', isDisabled: true})
-                .buttons__item
+                .form-elements__buttons-item
                     +button({text:"перейти к оплате", view: 'filled', hasArrow: true})
             .pagination-block
                 label.pagination-block__header pagination
