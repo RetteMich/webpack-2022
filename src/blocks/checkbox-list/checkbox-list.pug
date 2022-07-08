@@ -10,7 +10,7 @@ mixin checkbox-list(options=[])
     if (type=='dropdown')
         .checkbox-list.js-checkbox-list-dropdown
             .checkbox-list__menu.js-checkbox-list__menu
-                h3.checkbox-list__header=header
+                h3.checkbox-list__header.checkbox-list__header-dropdown=header
                 .checkbox-list__arrow.js-checkbox-list__arrow.material-icons expand_more
             .checkbox-list__body.js-checkbox-list__body
                 each item in items 
