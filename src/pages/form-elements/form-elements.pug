@@ -75,36 +75,44 @@ mixin form-elements
                 h3.form-elements__pagination-header pagination
                 .form-elements__pagination-item 
                     +pagination
+        .form-elements__column
+            .ffffffff
+            //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
+            //+dropdown({values:['взрослые', 'дети', 'младенцы']})
+            .form-elements__expandable-lists
+                .form-elements__expandable-list-wrapper
+                    // +checkbox
+                    +checkbox-list({items: [{title:"Завтрак"},
+                    {title:"Письменный стол", isActive:true},
+                    {title:"Стул для кормления",  isActive:true},
+                    {title:"Кроватка"},
+                    {title:"Телевизор"},
+                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
 
-        //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
-        //+dropdown({values:['взрослые', 'дети', 'младенцы']})
+                    +checkbox-list({items: [{title:"Завтрак"},
+                    {title:"Письменный стол", isActive:true},
+                    {title:"Стул для кормления",  isActive:true},
+                    {title:"Кроватка"},
+                    {title:"Телевизор"},
+                    {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
 
-        .form-elements__expandable-lists
-            .form-elements__expandable-list-wrapper
-                // +checkbox
-                +checkbox-list({items: [{title:"Завтрак"},
-                {title:"Письменный стол", isActive:true},
-                {title:"Стул для кормления",  isActive:true},
-                {title:"Кроватка"},
-                {title:"Телевизор"},
-                {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
 
-                +checkbox-list({items: [{title:"Завтрак"},
-                {title:"Письменный стол", isActive:true},
-                {title:"Стул для кормления",  isActive:true},
-                {title:"Кроватка"},
-                {title:"Телевизор"},
-                {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
-            .form-elements__expandable-list
-        .form-elements__rich-bullet-lists
-            .form-elements__list-wrapper
-                +checkbox-list({items: [{title:"Широкий коридор", subtitle:'Ширина коридоров в номере не менее 91 см.',},
-                {title:"Помощник для инвалидов", subtitle:'На 1 этаже вас встретит специалист и проводит до номера.'}],
-                    header: "rich", type: "rich"})
-        .form-elements__rich-bullet-lists
-            .bullet-list 
-                h6.bullet-list__header bullet list
-                +bullet-list({items:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
+        .form-elements__column
+            .ffffffff
+                //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
+
+            .form-elements__rich-bullet-lists
+                .form-elements__list-wrapper
+                    +checkbox-list({header: "rich checkbox buttons", 
+                        type: "rich", 
+                        items: [{title:"Широкий коридор", subtitle:'Ширина коридоров в номере не менее 91 см.'},
+                            {title:"Помощник для инвалидов", subtitle:'На 1 этаже вас встретит специалист и проводит до номера.'}]})
+        .form-elements__column   
+            .ffffffff
+                //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})             
+            .form-elements__rich-bullet-lists
+                +bullet-list({header: 'bullet list', 
+                items:['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']})
 
         .form-elements__infographics
             +infographic({icon: 'insert_emoticon', title:'Комфорт', subtitle:'Шумопоглощающие стены'})
