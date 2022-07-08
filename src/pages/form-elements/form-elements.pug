@@ -80,7 +80,7 @@ mixin form-elements
             //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
             //+dropdown({values:['взрослые', 'дети', 'младенцы']})
             .form-elements__expandable-lists
-                .form-elements__expandable-list-wrapper
+                .form-elements__expandable-lists-item
                     // +checkbox
                     +checkbox-list({items: [{title:"Завтрак"},
                     {title:"Письменный стол", isActive:true},
@@ -88,7 +88,7 @@ mixin form-elements
                     {title:"Кроватка"},
                     {title:"Телевизор"},
                     {title:"Шампунь"}], header: "expandable checkbox list",type: "dropdown"})
-
+                .form-elements__expandable-lists-item
                     +checkbox-list({items: [{title:"Завтрак"},
                     {title:"Письменный стол", isActive:true},
                     {title:"Стул для кормления",  isActive:true},
@@ -100,12 +100,11 @@ mixin form-elements
         .form-elements__column
             .ffffffff
                 //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})
-            .form-elements__rich-bullet-lists
-                .form-elements__list-wrapper
-                    +checkbox-list({header: "rich checkbox buttons", 
-                        type: "rich", 
-                        items: [{title:"Широкий коридор", subtitle:'Ширина коридоров в номере не менее 91 см.'},
-                            {title:"Помощник для инвалидов", subtitle:'На 1 этаже вас встретит специалист и проводит до номера.'}]})
+            .form-elements__rich-lists
+                +checkbox-list({header: "rich checkbox buttons", 
+                    type: "rich", 
+                    items: [{title:"Широкий коридор", subtitle:'Ширина коридоров в номере не менее 91 см.'},
+                        {title:"Помощник для инвалидов", subtitle:'На 1 этаже вас встретит специалист и проводит до номера.'}]})
         .form-elements__column   
             .ffffffff
                 //+dropdown({values:['спальни', 'кровати', 'ванные комнаты']})             
