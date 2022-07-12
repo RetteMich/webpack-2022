@@ -1,0 +1,24 @@
+mixin dropdown(options=[])
+    -
+        const {type="", 
+            header="",
+            items,
+            values=[],
+            // classic, dropdown, rich
+        } = options
+
+
+    .dropdown.js-dropdown
+        h3.dropdown__header.dropdown__header ddddddd
+        .dropdown__inner
+            .dropdown__menu.js-dropdown__menu
+                span.dropdown__placeholder.js-dropdown__placeholder Выберите удобства
+                .dropdown__arrow.js-dropdown__arrow.material-icons expand_more
+            .dropdown__body.js-dropdown__body
+                each item in values
+                    .dropdown__item
+                        span.dropdown__value=item
+                        .dropdown__counter.js-dropdown__counter
+                            button.dropdown__button.js-dropdown__button -
+                            span.dropdown__number.js-dropdown__number 2
+                            button.dropdown__button.js-dropdown__button +
