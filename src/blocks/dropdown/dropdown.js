@@ -67,32 +67,48 @@ function dropdownClick(dropdown, dropdownMenu) {
     });
 }
 
-function choiceWordForm() {
-    const wordForms = {
-        bedroom: ['спальня', 'спальни', 'спален'],
-        bed: ['кровать', 'кровати', 'кроватей'],
-        bathroom: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-        guests: ['гость', 'гостя', 'гостей'],
-    };
+function choiceWordForm(array, number) {
+    const wordForms = [
+        ['спальня', 'спальни', 'спален'],
+        ['кровать', 'кровати', 'кроватей'],
+        ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+        //guests: ['гость', 'гостя', 'гостей'],
+    ];
+
+    if (number > 10 && number < 20) return wordForms[array][2];
+    else if (number % 10 > 1 && number % 10 < 5) return wordForms[array][1];
+    else if (number % 10 == 1) return wordForms[array][0];
+    return wordForms[array][2];
 }
 
 function showPlaceholder(dropdown) {
     let sum = 0;
+    let placeholder = '';
     const showPlaceholder = dropdown.querySelector('.js-dropdown__placeholder');
     const dropdownCounters = dropdown.querySelectorAll('.js-dropdown__counter');
-
+    let i = 0;
     dropdownCounters.forEach((dropdownCounter) => {
         const dropdownNumber = dropdownCounter.querySelector(
             '.js-dropdown__number'
         );
-        console.log(dropdownNumber.textContent);
         sum += +dropdownNumber.textContent;
+        if (+dropdownNumber.textContent > 0) {
+            let word = choiceWordForm(i, +dropdownNumber.textContent);
+            placeholder =
+                placeholder + dropdownNumber.textContent + ' ' + word + ', ';
+        }
+        i++;
     });
-    console.log(sum);
     if (sum == 0) {
         showPlaceholder.textContent = 'Выберите удобства';
     } else {
-        showPlaceholder.textContent = '<KF<FKFKFKKF>';
+        // if (placeholder.length > 20) {
+        //     placeholder = placeholder.slice(0, 20);
+        //     placeholder += '...';
+        //     console.log(placeholder);
+        // }
+        //placeholder = placeholder.slice(0, -1);
+        showPlaceholder.textContent = placeholder.slice(0, -2);
     }
 }
 

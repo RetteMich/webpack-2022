@@ -17,6 +17,12 @@
         align-items: center;
         height: 2.625rem;
     }
+    &__placeholder {
+        margin-left: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     &__arrow {
         margin-right: 9px;
