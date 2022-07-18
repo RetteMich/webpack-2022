@@ -9,10 +9,10 @@ mixin form-elements
                 +field({header:"Text field", description: "Hover / Focus", mask: "This is pretty awesome"})
             .form-elements__fields-item
                 +field({header:"Dropdown", mask: "Сколько гостей"})
-
             .form-elements__fields-item
                 +field({header:"masked text field", mask: "ДД.ММ.ГГГГ"})
             .form-elements__calendars
+                +datepicker
                 +field({header: "date Dropdown", description: "Default", mask: "Email"})
                 +field({header:"filter date dropdown", description: "Hover / Focus", mask: "This is pretty awesome"})
                 +field({header:"subscription text field", mask: "Email", isSubscription: true, subscriptionText:"Получайте специальные предложения и новости сервиса"})

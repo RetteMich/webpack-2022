@@ -6,4 +6,5 @@ import './blocks/button/button.js';
 import './blocks/dropdown/dropdown';
 import './blocks/pagination/pagination.js';
 import './blocks/checkbox-list/checkbox-list.js';
+import './blocks/datepicker/datepicker';
 import 'jquery-ui/ui/widgets/slider';
